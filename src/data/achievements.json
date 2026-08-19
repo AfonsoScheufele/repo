@@ -1,0 +1,137 @@
+{
+  "profile": {
+    "name": "Afonso Scheufele",
+    "username": "devA52",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/57766228?v=4",
+    "githubUrl": "https://github.com/devA52",
+    "memberSince": "2019-11-14T16:32:09Z"
+  },
+  "stats": {
+    "publicRepos": 2,
+    "memberSinceYear": 2019,
+    "yearsOnGitHub": 7,
+    "languages": [],
+    "totalStars": 0
+  },
+  "repos": [
+    {
+      "name": "KiCad1",
+      "description": "TestKiCad1",
+      "language": null,
+      "stars": 0,
+      "url": "https://github.com/devA52/KiCad1",
+      "topics": [],
+      "updatedAt": "2019-11-19T10:24:02Z"
+    },
+    {
+      "name": "tram3",
+      "description": "Strassenbahn",
+      "language": null,
+      "stars": 0,
+      "url": "https://github.com/devA52/tram3",
+      "topics": [],
+      "updatedAt": "2019-11-14T20:34:50Z"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "gh-member",
+      "title": "Membro GitHub desde 2019",
+      "description": "7+ anos construindo e compartilhando código.",
+      "category": "github",
+      "year": 2019,
+      "icon": "github"
+    },
+    {
+      "id": "gh-repos",
+      "title": "2 Repositórios Públicos",
+      "description": "Projetos open source disponíveis para a comunidade.",
+      "category": "github",
+      "icon": "folder"
+    },
+    {
+      "id": "career-iiot",
+      "title": "Industrial IoT & Automação",
+      "description": "Experiência em sistemas industriais conectados, sensores e integração de dados em tempo real.",
+      "category": "career",
+      "year": 2024,
+      "icon": "cpu"
+    },
+    {
+      "id": "career-kicad",
+      "title": "Design de PCB com KiCad",
+      "description": "Projetos de hardware eletrônico e prototipagem com KiCad — do esquemático à placa final.",
+      "category": "tech",
+      "year": 2023,
+      "icon": "circuit"
+    },
+    {
+      "id": "career-tram",
+      "title": "Simulação Strassenbahn",
+      "description": "Projeto tram3: modelagem e simulação de sistemas de transporte urbano.",
+      "category": "tech",
+      "year": 2022,
+      "icon": "train"
+    },
+    {
+      "id": "personal-mission",
+      "title": "Missão: Tecnologia com Propósito",
+      "description": "Construir soluções que conectam engenharia, software e impacto real no dia a dia.",
+      "category": "personal",
+      "icon": "target"
+    },
+    {
+      "id": "personal-vision",
+      "title": "Visão: Inovação Acessível",
+      "description": "Democratizar ferramentas técnicas e tornar a inovação compreensível para todos.",
+      "category": "personal",
+      "icon": "eye"
+    },
+    {
+      "id": "personal-values",
+      "title": "Valores: Curiosidade & Precisão",
+      "description": "Aprender continuamente, entregar com qualidade e colaborar com transparência.",
+      "category": "personal",
+      "icon": "heart"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "github-join",
+      "year": 2019,
+      "title": "Entrada no GitHub",
+      "description": "Conta @devA52 criada — início da jornada open source."
+    },
+    {
+      "id": "repo-KiCad1",
+      "year": 2019,
+      "title": "KiCad1",
+      "description": "TestKiCad1"
+    },
+    {
+      "id": "repo-tram3",
+      "year": 2019,
+      "title": "tram3",
+      "description": "Strassenbahn"
+    },
+    {
+      "id": "career-tram",
+      "year": 2022,
+      "title": "Simulação Strassenbahn",
+      "description": "Projeto tram3: modelagem e simulação de sistemas de transporte urbano."
+    },
+    {
+      "id": "career-kicad",
+      "year": 2023,
+      "title": "Design de PCB com KiCad",
+      "description": "Projetos de hardware eletrônico e prototipagem com KiCad — do esquemático à placa final."
+    },
+    {
+      "id": "career-iiot",
+      "year": 2024,
+      "title": "Industrial IoT & Automação",
+      "description": "Experiência em sistemas industriais conectados, sensores e integração de dados em tempo real."
+    }
+  ],
+  "fetchedAt": "2026-08-19T19:47:34.319Z"
+}

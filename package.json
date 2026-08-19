@@ -1,0 +1,31 @@
+{
+  "name": "conquistas-deva52",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "fetch-github": "tsx scripts/fetch-github.ts",
+    "dev": "npm run fetch-github && vite",
+    "build": "npm run fetch-github && tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "animejs": "^4.0.2",
+    "gsap": "^3.13.0",
+    "motion": "^12.23.12",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.12",
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^5.0.0",
+    "tailwindcss": "^4.1.12",
+    "tsx": "^4.20.4",
+    "typescript": "~5.8.3",
+    "vite": "^7.1.2"
+  }
+}

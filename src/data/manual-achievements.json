@@ -1,0 +1,47 @@
+[
+  {
+    "id": "career-iiot",
+    "title": "Industrial IoT & Automação",
+    "description": "Experiência em sistemas industriais conectados, sensores e integração de dados em tempo real.",
+    "category": "career",
+    "year": 2024,
+    "icon": "cpu"
+  },
+  {
+    "id": "career-kicad",
+    "title": "Design de PCB com KiCad",
+    "description": "Projetos de hardware eletrônico e prototipagem com KiCad — do esquemático à placa final.",
+    "category": "tech",
+    "year": 2023,
+    "icon": "circuit"
+  },
+  {
+    "id": "career-tram",
+    "title": "Simulação Strassenbahn",
+    "description": "Projeto tram3: modelagem e simulação de sistemas de transporte urbano.",
+    "category": "tech",
+    "year": 2022,
+    "icon": "train"
+  },
+  {
+    "id": "personal-mission",
+    "title": "Missão: Tecnologia com Propósito",
+    "description": "Construir soluções que conectam engenharia, software e impacto real no dia a dia.",
+    "category": "personal",
+    "icon": "target"
+  },
+  {
+    "id": "personal-vision",
+    "title": "Visão: Inovação Acessível",
+    "description": "Democratizar ferramentas técnicas e tornar a inovação compreensível para todos.",
+    "category": "personal",
+    "icon": "eye"
+  },
+  {
+    "id": "personal-values",
+    "title": "Valores: Curiosidade & Precisão",
+    "description": "Aprender continuamente, entregar com qualidade e colaborar com transparência.",
+    "category": "personal",
+    "icon": "heart"
+  }
+]

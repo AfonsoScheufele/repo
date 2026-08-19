@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Syne", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --color-bg: #0a0a0f;
+  --color-surface: #12121a;
+  --color-surface-2: #1a1a26;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-accent-violet: #8b5cf6;
+  --color-accent-cyan: #22d3ee;
+  --color-text: #f4f4f5;
+  --color-muted: #a1a1aa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-accent-violet), var(--color-accent-cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass-card {
+  background: rgba(18, 18, 26, 0.72);
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(16px);
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.timeline-dot {
+  box-shadow: 0 0 24px rgba(139, 92, 246, 0.5);
+}
+
+.achievement-card {
+  will-change: transform, opacity;
+}

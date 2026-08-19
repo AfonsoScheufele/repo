@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#0a0a0a"/>
+  <rect x="24" y="24" width="752" height="452" rx="4" fill="#111" stroke="#1f1f1f"/>
+  <rect x="40" y="48" width="720" height="36" rx="2" fill="#141414"/>
+  <text x="56" y="70" fill="#d97706" font-family="monospace" font-size="11">SALDO TOTAL</text>
+  <text x="640" y="70" fill="#eceae6" font-family="monospace" font-size="14">R$ 12.450,00</text>
+  <rect x="40" y="100" width="340" height="160" rx="4" fill="#141414" stroke="#222"/>
+  <polyline points="60,220 100,180 140,200 180,150 220,170 260,130 300,160 360,120" stroke="#d97706" stroke-width="2" fill="none"/>
+  <rect x="400" y="100" width="360" height="160" rx="4" fill="#141414" stroke="#222"/>
+  <rect x="420" y="120" width="320" height="28" rx="2" fill="#1a1408"/>
+  <rect x="420" y="156" width="280" height="28" rx="2" fill="#141414"/>
+  <rect x="420" y="192" width="300" height="28" rx="2" fill="#141414"/>
+  <rect x="40" y="280" width="720" height="180" rx="4" fill="#141414" stroke="#222"/>
+  <rect x="56" y="296" width="120" height="12" rx="2" fill="#333"/>
+  <rect x="200" y="296" width="80" height="12" rx="2" fill="#333"/>
+  <rect x="320" y="296" width="60" height="12" rx="2" fill="#333"/>
+  <rect x="56" y="320" width="688" height="1" fill="#222"/>
+  <rect x="56" y="332" width="200" height="10" rx="2" fill="#444"/>
+  <text x="400" y="340" fill="#22c55e" font-family="monospace" font-size="10">+ R$ 350,00</text>
+  <rect x="56" y="356" width="160" height="10" rx="2" fill="#444"/>
+  <text x="400" y="364" fill="#ef4444" font-family="monospace" font-size="10">- R$ 89,90</text>
+  <rect x="56" y="380" width="180" height="10" rx="2" fill="#444"/>
+  <text x="400" y="388" fill="#22c55e" font-family="monospace" font-size="10">+ R$ 2.100,00</text>
+</svg>

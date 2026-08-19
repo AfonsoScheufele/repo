@@ -1,47 +1,42 @@
 [
   {
-    "id": "career-iiot",
-    "title": "Industrial IoT & Automação",
-    "description": "Experiência em sistemas industriais conectados, sensores e integração de dados em tempo real.",
-    "category": "career",
-    "year": 2024,
-    "icon": "cpu"
+    "id": "iiot-stack",
+    "title": "Stack IIoT Completa",
+    "description": "PLC simulado → API Node.js → Dashboard React em tempo real.",
+    "category": "industrial",
+    "year": 2025,
+    "repo": "iiot-plc-node-react-dashboard"
   },
   {
-    "id": "career-kicad",
-    "title": "Design de PCB com KiCad",
-    "description": "Projetos de hardware eletrônico e prototipagem com KiCad — do esquemático à placa final.",
-    "category": "tech",
-    "year": 2023,
-    "icon": "circuit"
+    "id": "cv-inspection",
+    "title": "Visão Computacional Industrial",
+    "description": "Inspeção automatizada com TensorFlow e OpenCV para detecção de defeitos.",
+    "category": "industrial",
+    "year": 2026,
+    "repo": "Computer-Vision-Inspection-System"
   },
   {
-    "id": "career-tram",
-    "title": "Simulação Strassenbahn",
-    "description": "Projeto tram3: modelagem e simulação de sistemas de transporte urbano.",
-    "category": "tech",
-    "year": 2022,
-    "icon": "train"
+    "id": "digital-twin",
+    "title": "Digital Twin 3D",
+    "description": "Interface interativa 3D com Three.js e WebGL para gêmeos digitais.",
+    "category": "software",
+    "year": 2025,
+    "repo": "digital-twin-3d"
   },
   {
-    "id": "personal-mission",
-    "title": "Missão: Tecnologia com Propósito",
-    "description": "Construir soluções que conectam engenharia, software e impacto real no dia a dia.",
-    "category": "personal",
-    "icon": "target"
+    "id": "event-sourcing",
+    "title": "Event Sourcing Industrial",
+    "description": "Logger de eventos industriais com auditoria completa e rastreabilidade.",
+    "category": "industrial",
+    "year": 2025,
+    "repo": "industrial-event-logger"
   },
   {
-    "id": "personal-vision",
-    "title": "Visão: Inovação Acessível",
-    "description": "Democratizar ferramentas técnicas e tornar a inovação compreensível para todos.",
-    "category": "personal",
-    "icon": "eye"
-  },
-  {
-    "id": "personal-values",
-    "title": "Valores: Curiosidade & Precisão",
-    "description": "Aprender continuamente, entregar com qualidade e colaborar com transparência.",
-    "category": "personal",
-    "icon": "heart"
+    "id": "finance-erp",
+    "title": "ERP Financeiro Pessoal",
+    "description": "Gestão de contas, transações e controle de orçamento em JavaScript.",
+    "category": "software",
+    "year": 2026,
+    "repo": "money-manager"
   }
 ]

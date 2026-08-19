@@ -1,57 +1,48 @@
-# Conquistas | @devA52
+# Conquistas | Afonso Scheufele
 
-Portfolio animado de conquistas de **Afonso Scheufele**, com dados do GitHub e seção manual editável.
+Portfolio imersivo — [@AfonsoScheufele](https://github.com/AfonsoScheufele)
 
-## Stack
-
-| Biblioteca | Uso neste projeto |
-|------------|-------------------|
-| **GSAP + ScrollTrigger** | Parallax no hero, timeline pinned, entrada em batch dos cards |
-| **Anime.js** | Stagger do título, contadores animados, desenho SVG |
-| **Motion** (`motion/react`) | Bento grid, filtros com layoutId, hover nos repos |
-
-## Rodar localmente
+## Rodar
 
 ```bash
 npm install
 npm run dev
 ```
 
-Abre em [http://localhost:5173](http://localhost:5173).
+## Features
 
-## Atualizar conquistas
+- **Lenis** smooth scroll + GSAP ScrollTrigger
+- Preloader com cortina split
+- Seções ON/OFF (Industrial vs Software)
+- Timeline pinned, stats, gráfico de linguagens
+- Galeria horizontal com mocks SVG + case study modal
+- Cursor customizado (desktop), progress bar, nav mobile
 
-### GitHub (automático)
-
-```bash
-npm run fetch-github
-```
-
-Puxa avatar, repos e stats da API pública. Variáveis opcionais:
-
-```bash
-GITHUB_USERNAME=devA52 DISPLAY_NAME="Afonso Scheufele" npm run fetch-github
-```
-
-### Conquistas manuais
-
-Edite [`src/data/manual-achievements.json`](src/data/manual-achievements.json) com projetos de carreira, certificações, etc. O script faz merge com os dados do GitHub.
-
-## Build
+## Dados
 
 ```bash
-npm run build
-npm run preview
+npm run fetch-github   # AfonsoScheufele por padrão
 ```
+
+Editar conquistas: [`src/data/manual-achievements.json`](src/data/manual-achievements.json)
+
+## Screenshots dos repos
+
+Substituir mocks em [`public/screenshots/`](public/screenshots/) e paths em [`src/data/repo-media.json`](src/data/repo-media.json).
 
 ## Deploy (GitHub Pages)
 
-O workflow em [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) publica automaticamente na branch `main`.
+```bash
+gh auth login -s workflow
+git push origin main
+```
 
-## Acessibilidade
+Ativar Pages: Settings → Pages → GitHub Actions.
 
-Respeita `prefers-reduced-motion`: animações são desativadas ou simplificadas quando o usuário prefere movimento reduzido.
+## Animações
 
-## Licença
-
-MIT
+| Lib | Uso |
+|-----|-----|
+| GSAP | Pin, scrub, horizontal scroll, parallax |
+| Anime.js | Contadores, barras de linguagem, hero stagger |
+| Motion | Modal, filtros, cursor, mobile menu |

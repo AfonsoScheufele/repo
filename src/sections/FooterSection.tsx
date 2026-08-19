@@ -1,63 +1,88 @@
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "motion/react";
+import { MagneticLink } from "../components/MagneticLink";
 import { data } from "../data";
-import { fadeUp, motionTheme, staggerContainer } from "../motion.theme";
+import { motionTheme } from "../motion.theme";
+import { useReducedMotion } from "../hooks/useReducedMotion";
 
-const stack = [
-  { name: "GSAP", role: "Scroll & pin" },
-  { name: "Anime.js", role: "Micro-interações" },
-  { name: "Motion", role: "Blocos UI" },
-];
+gsap.registerPlugin(ScrollTrigger);
 
 export function FooterSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const reduced = useReducedMotion();
+
+  useGSAP(
+    () => {
+      if (reduced || !textRef.current) return;
+
+      gsap.fromTo(
+        textRef.current,
+        { xPercent: 8 },
+        {
+          xPercent: -8,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1.5,
+          },
+        },
+      );
+    },
+    { scope: sectionRef, dependencies: [reduced] },
+  );
+
+  const socials = [
+    { label: "GitHub", href: data.profile.githubUrl },
+    ...(data.profile.twitter
+      ? [{ label: "X / Twitter", href: `https://x.com/${data.profile.twitter}` }]
+      : []),
+    ...(data.profile.location
+      ? [{ label: data.profile.location, href: "#hero" as string }]
+      : []),
+  ];
+
   return (
-    <footer className="border-t border-white/5 px-6 py-16">
-      <div className="mx-auto max-w-6xl">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-          className="flex flex-col items-center gap-8 text-center"
-        >
-          <motion.div variants={fadeUp} transition={motionTheme.gentle}>
-            <p className="text-sm text-zinc-500">
-              Dados atualizados em{" "}
-              {new Date(data.fetchedAt).toLocaleDateString("pt-BR", {
-                day: "2-digit",
-                month: "long",
-                year: "numeric",
-              })}
-            </p>
-          </motion.div>
+    <footer ref={sectionRef} className="overflow-hidden border-t border-white/5">
+      <div ref={textRef} className="whitespace-nowrap py-20 select-none">
+        <span className="font-display text-[clamp(4rem,18vw,14rem)] uppercase tracking-tight text-white/5">
+          SEMPRE CONSTRUINDO — SEMPRE EVOLUINDO —&nbsp;
+        </span>
+        <span className="font-display text-[clamp(4rem,18vw,14rem)] uppercase tracking-tight text-[#ff5c35]/20">
+          SEMPRE CONSTRUINDO — SEMPRE EVOLUINDO —&nbsp;
+        </span>
+      </div>
 
-          <motion.div
-            variants={fadeUp}
-            transition={motionTheme.gentle}
-            className="flex flex-wrap justify-center gap-4"
+      <div className="flex flex-col items-center gap-8 border-t border-white/5 px-[5vw] py-12 sm:flex-row sm:justify-between">
+        <MagneticLink>
+          <motion.a
+            href={data.profile.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-display text-2xl uppercase tracking-wider text-[#eceae6] transition hover:text-[#ff5c35]"
+            whileHover={reduced ? {} : { scale: 1.02 }}
+            transition={motionTheme.snap}
           >
-            {stack.map((item) => (
-              <div
-                key={item.name}
-                className="glass-card rounded-xl px-4 py-3 text-left"
-              >
-                <p className="text-sm font-semibold">{item.name}</p>
-                <p className="text-xs text-zinc-500">{item.role}</p>
-              </div>
-            ))}
-          </motion.div>
+            @{data.profile.username}
+          </motion.a>
+        </MagneticLink>
 
-          <motion.p variants={fadeUp} transition={motionTheme.gentle} className="text-zinc-600 text-sm">
-            Feito com React + Vite ·{" "}
-            <a
-              href={data.profile.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-violet-400 hover:underline"
-            >
-              @{data.profile.username}
+        <div className="flex flex-wrap justify-center gap-6 text-xs uppercase tracking-widest text-[#6b6560]">
+          {socials.map((s) => (
+            <a key={s.label} href={s.href} className="transition hover:text-[#ff5c35]" target={s.href.startsWith("http") ? "_blank" : undefined} rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}>
+              {s.label}
             </a>
-          </motion.p>
-        </motion.div>
+          ))}
+        </div>
+
+        <p className="text-xs text-[#6b6560]">
+          © {new Date().getFullYear()} {data.profile.name}
+        </p>
       </div>
     </footer>
   );

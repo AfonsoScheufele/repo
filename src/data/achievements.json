@@ -1,137 +1,303 @@
 {
   "profile": {
     "name": "Afonso Scheufele",
-    "username": "devA52",
-    "avatarUrl": "https://avatars.githubusercontent.com/u/57766228?v=4",
-    "githubUrl": "https://github.com/devA52",
-    "memberSince": "2019-11-14T16:32:09Z"
+    "username": "AfonsoScheufele",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/189060508?v=4",
+    "githubUrl": "https://github.com/AfonsoScheufele",
+    "location": "Concórdia",
+    "twitter": "AfonsoScheufele",
+    "memberSince": "2024-11-20T00:26:30Z"
   },
   "stats": {
-    "publicRepos": 2,
-    "memberSinceYear": 2019,
-    "yearsOnGitHub": 7,
-    "languages": [],
-    "totalStars": 0
+    "publicRepos": 5,
+    "memberSinceYear": 2024,
+    "yearsOnGitHub": 2,
+    "languages": [
+      "JavaScript",
+      "Python",
+      "HTML",
+      "TypeScript"
+    ],
+    "totalStars": 11,
+    "followers": 46,
+    "following": 38,
+    "lastPush": "2026-01-26T17:15:52Z"
   },
   "repos": [
     {
-      "name": "KiCad1",
-      "description": "TestKiCad1",
-      "language": null,
+      "name": "money-manager",
+      "description": "Personal finance management system for tracking accounts, transactions, and budget control",
+      "language": "JavaScript",
       "stars": 0,
-      "url": "https://github.com/devA52/KiCad1",
+      "forks": 0,
+      "url": "https://github.com/AfonsoScheufele/money-manager",
       "topics": [],
-      "updatedAt": "2019-11-19T10:24:02Z"
+      "createdAt": "2026-01-21T17:49:20Z",
+      "updatedAt": "2026-01-26T17:16:32Z",
+      "lastPush": "2026-01-26T17:15:52Z",
+      "languages": {
+        "JavaScript": 191110,
+        "Go": 76970,
+        "CSS": 11087,
+        "HTML": 1321
+      },
+      "category": "software"
     },
     {
-      "name": "tram3",
-      "description": "Strassenbahn",
-      "language": null,
+      "name": "Computer-Vision-Inspection-System",
+      "description": "Automated inspection system using TensorFlow and OpenCV for defect detection in images.",
+      "language": "Python",
       "stars": 0,
-      "url": "https://github.com/devA52/tram3",
+      "forks": 0,
+      "url": "https://github.com/AfonsoScheufele/Computer-Vision-Inspection-System",
       "topics": [],
-      "updatedAt": "2019-11-14T20:34:50Z"
+      "createdAt": "2026-01-16T15:58:04Z",
+      "updatedAt": "2026-01-21T16:25:54Z",
+      "lastPush": "2026-01-21T16:09:05Z",
+      "languages": {
+        "Python": 21623,
+        "Shell": 1140
+      },
+      "category": "industrial"
+    },
+    {
+      "name": "digital-twin-3d",
+      "description": "Interactive 3D Digital Twin interface using Three.js and WebGL. Features real-time animations, 3D physics simulation, advanced rendering, and camera controls.",
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "url": "https://github.com/AfonsoScheufele/digital-twin-3d",
+      "topics": [],
+      "createdAt": "2026-01-16T12:34:17Z",
+      "updatedAt": "2026-01-16T15:52:31Z",
+      "lastPush": "2026-01-16T15:52:28Z",
+      "languages": {
+        "JavaScript": 48211,
+        "CSS": 9488,
+        "HTML": 4092
+      },
+      "category": "software"
+    },
+    {
+      "name": "industrial-event-logger",
+      "description": "Industrial Event Logger using Event Sourcing for auditability and replay",
+      "language": "HTML",
+      "stars": 0,
+      "forks": 0,
+      "url": "https://github.com/AfonsoScheufele/industrial-event-logger",
+      "topics": [],
+      "createdAt": "2026-01-13T21:23:18Z",
+      "updatedAt": "2026-01-16T15:54:08Z",
+      "lastPush": "2026-01-16T15:54:05Z",
+      "languages": {
+        "HTML": 11853,
+        "TypeScript": 11022,
+        "Shell": 2535,
+        "Dockerfile": 477
+      },
+      "category": "industrial"
+    },
+    {
+      "name": "iiot-plc-node-react-dashboard",
+      "description": "IIoT project: PLC simulation → Node.js API → React dashboard",
+      "language": "TypeScript",
+      "stars": 0,
+      "forks": 0,
+      "url": "https://github.com/AfonsoScheufele/iiot-plc-node-react-dashboard",
+      "topics": [],
+      "createdAt": "2026-01-13T01:26:03Z",
+      "updatedAt": "2026-01-15T20:15:48Z",
+      "lastPush": "2026-01-15T20:15:41Z",
+      "languages": {
+        "TypeScript": 131230,
+        "JavaScript": 3035,
+        "CSS": 1032,
+        "HTML": 367,
+        "Dockerfile": 166
+      },
+      "category": "industrial"
     }
   ],
   "achievements": [
     {
-      "id": "gh-member",
-      "title": "Membro GitHub desde 2019",
-      "description": "7+ anos construindo e compartilhando código.",
-      "category": "github",
-      "year": 2019,
-      "icon": "github"
+      "id": "gh-followers",
+      "title": "46 Seguidores",
+      "description": "Comunidade dev acompanhando o trabalho no GitHub.",
+      "category": "github"
     },
     {
       "id": "gh-repos",
-      "title": "2 Repositórios Públicos",
-      "description": "Projetos open source disponíveis para a comunidade.",
+      "title": "5 Projetos Públicos",
+      "description": "De IIoT e visão computacional a dashboards e ERP.",
+      "category": "github"
+    },
+    {
+      "id": "gh-profile",
+      "title": "Profile README",
+      "description": "11 stars no repositório de perfil.",
       "category": "github",
-      "icon": "folder"
+      "repo": "AfonsoScheufele"
     },
     {
-      "id": "career-iiot",
-      "title": "Industrial IoT & Automação",
-      "description": "Experiência em sistemas industriais conectados, sensores e integração de dados em tempo real.",
-      "category": "career",
-      "year": 2024,
-      "icon": "cpu"
+      "id": "gh-langs",
+      "title": "JavaScript · Python · HTML · TypeScript",
+      "description": "Stack técnica nos repositórios públicos.",
+      "category": "github"
     },
     {
-      "id": "career-kicad",
-      "title": "Design de PCB com KiCad",
-      "description": "Projetos de hardware eletrônico e prototipagem com KiCad — do esquemático à placa final.",
-      "category": "tech",
-      "year": 2023,
-      "icon": "circuit"
+      "id": "iiot-stack",
+      "title": "Stack IIoT Completa",
+      "description": "PLC simulado → API Node.js → Dashboard React em tempo real.",
+      "category": "industrial",
+      "year": 2025,
+      "repo": "iiot-plc-node-react-dashboard"
     },
     {
-      "id": "career-tram",
-      "title": "Simulação Strassenbahn",
-      "description": "Projeto tram3: modelagem e simulação de sistemas de transporte urbano.",
-      "category": "tech",
-      "year": 2022,
-      "icon": "train"
+      "id": "cv-inspection",
+      "title": "Visão Computacional Industrial",
+      "description": "Inspeção automatizada com TensorFlow e OpenCV para detecção de defeitos.",
+      "category": "industrial",
+      "year": 2026,
+      "repo": "Computer-Vision-Inspection-System"
     },
     {
-      "id": "personal-mission",
-      "title": "Missão: Tecnologia com Propósito",
-      "description": "Construir soluções que conectam engenharia, software e impacto real no dia a dia.",
-      "category": "personal",
-      "icon": "target"
+      "id": "digital-twin",
+      "title": "Digital Twin 3D",
+      "description": "Interface interativa 3D com Three.js e WebGL para gêmeos digitais.",
+      "category": "software",
+      "year": 2025,
+      "repo": "digital-twin-3d"
     },
     {
-      "id": "personal-vision",
-      "title": "Visão: Inovação Acessível",
-      "description": "Democratizar ferramentas técnicas e tornar a inovação compreensível para todos.",
-      "category": "personal",
-      "icon": "eye"
+      "id": "event-sourcing",
+      "title": "Event Sourcing Industrial",
+      "description": "Logger de eventos industriais com auditoria completa e rastreabilidade.",
+      "category": "industrial",
+      "year": 2025,
+      "repo": "industrial-event-logger"
     },
     {
-      "id": "personal-values",
-      "title": "Valores: Curiosidade & Precisão",
-      "description": "Aprender continuamente, entregar com qualidade e colaborar com transparência.",
-      "category": "personal",
-      "icon": "heart"
+      "id": "finance-erp",
+      "title": "ERP Financeiro Pessoal",
+      "description": "Gestão de contas, transações e controle de orçamento em JavaScript.",
+      "category": "software",
+      "year": 2026,
+      "repo": "money-manager"
     }
   ],
   "timeline": [
     {
       "id": "github-join",
-      "year": 2019,
-      "title": "Entrada no GitHub",
-      "description": "Conta @devA52 criada — início da jornada open source."
-    },
-    {
-      "id": "repo-KiCad1",
-      "year": 2019,
-      "title": "KiCad1",
-      "description": "TestKiCad1"
-    },
-    {
-      "id": "repo-tram3",
-      "year": 2019,
-      "title": "tram3",
-      "description": "Strassenbahn"
-    },
-    {
-      "id": "career-tram",
-      "year": 2022,
-      "title": "Simulação Strassenbahn",
-      "description": "Projeto tram3: modelagem e simulação de sistemas de transporte urbano."
-    },
-    {
-      "id": "career-kicad",
-      "year": 2023,
-      "title": "Design de PCB com KiCad",
-      "description": "Projetos de hardware eletrônico e prototipagem com KiCad — do esquemático à placa final."
-    },
-    {
-      "id": "career-iiot",
       "year": 2024,
-      "title": "Industrial IoT & Automação",
-      "description": "Experiência em sistemas industriais conectados, sensores e integração de dados em tempo real."
+      "title": "GitHub",
+      "description": "@AfonsoScheufele — início da jornada open source."
+    },
+    {
+      "id": "iiot-stack",
+      "year": 2025,
+      "title": "Stack IIoT Completa",
+      "description": "PLC simulado → API Node.js → Dashboard React em tempo real."
+    },
+    {
+      "id": "digital-twin",
+      "year": 2025,
+      "title": "Digital Twin 3D",
+      "description": "Interface interativa 3D com Three.js e WebGL para gêmeos digitais."
+    },
+    {
+      "id": "event-sourcing",
+      "year": 2025,
+      "title": "Event Sourcing Industrial",
+      "description": "Logger de eventos industriais com auditoria completa e rastreabilidade."
+    },
+    {
+      "id": "repo-money-manager",
+      "year": 2026,
+      "title": "money-manager",
+      "description": "Personal finance management system for tracking accounts, transactions, and budget control"
+    },
+    {
+      "id": "repo-Computer-Vision-Inspection-System",
+      "year": 2026,
+      "title": "Computer-Vision-Inspection-System",
+      "description": "Automated inspection system using TensorFlow and OpenCV for defect detection in images."
+    },
+    {
+      "id": "repo-digital-twin-3d",
+      "year": 2026,
+      "title": "digital-twin-3d",
+      "description": "Interactive 3D Digital Twin interface using Three.js and WebGL. Features real-time animations, 3D physics simulation, advanced rendering, and camera controls."
+    },
+    {
+      "id": "repo-industrial-event-logger",
+      "year": 2026,
+      "title": "industrial-event-logger",
+      "description": "Industrial Event Logger using Event Sourcing for auditability and replay"
+    },
+    {
+      "id": "repo-iiot-plc-node-react-dashboard",
+      "year": 2026,
+      "title": "iiot-plc-node-react-dashboard",
+      "description": "IIoT project: PLC simulation → Node.js API → React dashboard"
+    },
+    {
+      "id": "cv-inspection",
+      "year": 2026,
+      "title": "Visão Computacional Industrial",
+      "description": "Inspeção automatizada com TensorFlow e OpenCV para detecção de defeitos."
+    },
+    {
+      "id": "finance-erp",
+      "year": 2026,
+      "title": "ERP Financeiro Pessoal",
+      "description": "Gestão de contas, transações e controle de orçamento em JavaScript."
     }
   ],
-  "fetchedAt": "2026-08-19T19:47:34.319Z"
+  "languageBreakdown": [
+    {
+      "name": "JavaScript",
+      "bytes": 242356,
+      "percent": 46
+    },
+    {
+      "name": "TypeScript",
+      "bytes": 142252,
+      "percent": 27
+    },
+    {
+      "name": "Go",
+      "bytes": 76970,
+      "percent": 15
+    },
+    {
+      "name": "Python",
+      "bytes": 21623,
+      "percent": 4
+    },
+    {
+      "name": "CSS",
+      "bytes": 21607,
+      "percent": 4
+    },
+    {
+      "name": "HTML",
+      "bytes": 17633,
+      "percent": 3
+    },
+    {
+      "name": "Shell",
+      "bytes": 3675,
+      "percent": 1
+    },
+    {
+      "name": "Dockerfile",
+      "bytes": 643,
+      "percent": 0
+    }
+  ],
+  "profileReadme": {
+    "stars": 11,
+    "url": "https://github.com/AfonsoScheufele/AfonsoScheufele"
+  },
+  "fetchedAt": "2026-08-19T20:05:55.482Z"
 }

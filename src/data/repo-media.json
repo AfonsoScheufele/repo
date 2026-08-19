@@ -1,0 +1,42 @@
+{
+  "money-manager": {
+    "screenshot": "/screenshots/money-manager.svg",
+    "caseStudy": {
+      "challenge": "Centralizar controle financeiro pessoal com categorização e visão de orçamento.",
+      "stack": ["JavaScript", "Node.js", "HTML/CSS"],
+      "outcome": "Sistema completo para contas, transações e controle de gastos mensais."
+    }
+  },
+  "Computer-Vision-Inspection-System": {
+    "screenshot": "/screenshots/computer-vision.svg",
+    "caseStudy": {
+      "challenge": "Detectar defeitos em imagens de produção com precisão e velocidade.",
+      "stack": ["Python", "TensorFlow", "OpenCV"],
+      "outcome": "Pipeline automatizado de inspeção visual para linha industrial."
+    }
+  },
+  "digital-twin-3d": {
+    "screenshot": "/screenshots/digital-twin.svg",
+    "caseStudy": {
+      "challenge": "Visualizar equipamentos industriais em 3D com dados em tempo real.",
+      "stack": ["JavaScript", "Three.js", "WebGL"],
+      "outcome": "Interface interativa de gêmeo digital com animações e controles de câmera."
+    }
+  },
+  "industrial-event-logger": {
+    "screenshot": "/screenshots/event-logger.svg",
+    "caseStudy": {
+      "challenge": "Garantir rastreabilidade total de eventos industriais para auditoria.",
+      "stack": ["HTML", "Event Sourcing", "JavaScript"],
+      "outcome": "Logger com replay de eventos e histórico imutável para compliance."
+    }
+  },
+  "iiot-plc-node-react-dashboard": {
+    "screenshot": "/screenshots/iiot-dashboard.svg",
+    "caseStudy": {
+      "challenge": "Conectar simulação de PLC a um dashboard web em tempo real.",
+      "stack": ["TypeScript", "Node.js", "React", "WebSocket"],
+      "outcome": "Stack IIoT completa: PLC → API → dashboard React com dados live."
+    }
+  }
+}

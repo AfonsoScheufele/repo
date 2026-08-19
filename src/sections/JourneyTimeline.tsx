@@ -11,104 +11,79 @@ export function JourneyTimeline() {
   const sectionRef = useRef<HTMLElement>(null);
   const pinRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
-  const reducedMotion = useReducedMotion();
+  const reduced = useReducedMotion();
 
   useGSAP(
     () => {
-      if (reducedMotion) return;
+      if (reduced) return;
 
-      const items = gsap.utils.toArray<HTMLElement>(".timeline-item");
+      const mm = gsap.matchMedia();
 
-      gsap.fromTo(
-        lineRef.current,
-        { scaleY: 0 },
-        {
-          scaleY: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 60%",
-            end: "bottom 40%",
-            scrub: 1,
+      mm.add("(min-width: 768px)", () => {
+        gsap.fromTo(
+          lineRef.current,
+          { scaleY: 0 },
+          {
+            scaleY: 1,
+            ease: "none",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top top",
+              end: "+=120%",
+              pin: pinRef.current,
+              scrub: 1,
+            },
           },
-        },
-      );
+        );
+      });
 
-      ScrollTrigger.batch(items, {
+      ScrollTrigger.batch(".timeline-event", {
         onEnter: (batch) => {
           gsap.fromTo(
             batch,
-            { opacity: 0, x: -40 },
-            { opacity: 1, x: 0, stagger: 0.12, duration: 0.6, ease: "power2.out" },
+            { opacity: 0, x: -24 },
+            { opacity: 1, x: 0, stagger: 0.1, duration: 0.6 },
           );
         },
-        onLeaveBack: (batch) => {
-          gsap.set(batch, { opacity: 0, x: -40 });
-        },
-        start: "top 85%",
-        end: "bottom 20%",
+        start: "top 88%",
       });
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: pinRef.current,
-          start: "top top",
-          end: "+=800",
-          pin: true,
-          scrub: 1,
-          anticipatePin: 1,
-        },
-      });
-
-      tl.fromTo(
-        ".journey-highlight",
-        { opacity: 0.3, scale: 0.95 },
-        { opacity: 1, scale: 1, duration: 1 },
-      ).to(".journey-highlight", { opacity: 0.3, scale: 0.95, duration: 1 });
     },
-    { scope: sectionRef, dependencies: [reducedMotion] },
+    { scope: sectionRef, dependencies: [reduced] },
   );
 
   return (
-    <section ref={sectionRef} id="jornada" className="px-6 py-24">
-      <div className="mx-auto max-w-4xl">
-        <div className="mb-16 text-center">
-          <p className="text-sm uppercase tracking-widest text-cyan-400">Timeline</p>
-          <h2 className="mt-2 text-4xl font-bold sm:text-5xl">Minha Jornada</h2>
-        </div>
+    <section ref={sectionRef} id="timeline" className="px-[5vw] py-24">
+      <div ref={pinRef}>
+        <p className="text-xs uppercase tracking-[0.4em] text-[#ff5c35]">Jornada</p>
+        <h2 className="mt-2 font-display text-[clamp(3rem,10vw,7rem)] uppercase leading-none">
+          Timeline
+        </h2>
 
-        <div
-          ref={pinRef}
-          className="journey-highlight glass-card mb-16 rounded-3xl p-8 text-center"
-        >
-          <p className="text-6xl font-extrabold gradient-text">{data.stats.yearsOnGitHub}+</p>
-          <p className="mt-2 text-lg text-zinc-400">anos construindo no ecossistema dev</p>
-        </div>
-
-        <div className="relative">
+        <div className="relative mt-16">
           <div
             ref={lineRef}
-            className="absolute left-4 top-0 h-full w-0.5 origin-top bg-gradient-to-b from-violet-500 to-cyan-400 sm:left-1/2 sm:-translate-x-px"
+            className="absolute left-4 top-0 hidden h-full w-px origin-top bg-gradient-to-b from-[#ff5c35] to-[#c9a962] md:block"
             aria-hidden
           />
 
-          <div className="space-y-12">
+          <div className="space-y-8 md:space-y-12">
             {data.timeline.map((event, i) => (
               <div
                 key={event.id}
-                className={`timeline-item relative flex gap-6 sm:gap-0 ${
-                  i % 2 === 0 ? "sm:flex-row" : "sm:flex-row-reverse"
+                className={`timeline-event relative flex gap-8 md:pl-12 ${
+                  i % 2 === 0 ? "" : "md:flex-row-reverse md:pr-12 md:pl-0 md:text-right"
                 }`}
-                style={reducedMotion ? { opacity: 1 } : { opacity: 0 }}
+                style={reduced ? { opacity: 1 } : { opacity: 0 }}
               >
-                <div className="hidden flex-1 sm:block" />
-                <div className="relative z-10 flex shrink-0 items-start sm:items-center sm:justify-center">
-                  <div className="timeline-dot h-4 w-4 rounded-full bg-violet-500 ring-4 ring-violet-500/20" />
-                </div>
-                <div className="glass-card flex-1 rounded-2xl p-5 sm:max-w-md">
-                  <span className="text-sm font-bold text-violet-400">{event.year}</span>
-                  <h3 className="mt-1 font-display text-lg font-semibold">{event.title}</h3>
-                  <p className="mt-2 text-sm text-zinc-400">{event.description}</p>
+                <span className="hidden font-display text-5xl text-white/10 md:block md:w-24 md:shrink-0">
+                  {event.year}
+                </span>
+                <div className="border border-white/8 bg-[#0f0f0f] p-5 md:max-w-md">
+                  <span className="font-display text-2xl text-[#ff5c35] md:hidden">
+                    {event.year}
+                  </span>
+                  <h3 className="mt-1 font-display text-xl uppercase">{event.title}</h3>
+                  <p className="mt-2 text-sm text-[#6b6560]">{event.description}</p>
                 </div>
               </div>
             ))}

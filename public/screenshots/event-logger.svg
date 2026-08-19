@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#0a0a0a"/>
+  <rect x="24" y="24" width="752" height="452" rx="4" fill="#111" stroke="#1f1f1f"/>
+  <line x1="80" y1="100" x2="720" y2="100" stroke="#222" stroke-width="1"/>
+  <line x1="80" y1="100" x2="80" y2="420" stroke="#c9a962" stroke-width="2"/>
+  <circle cx="80" cy="140" r="6" fill="#c9a962"/>
+  <rect x="100" y="128" width="200" height="24" rx="2" fill="#1a1814" stroke="#c9a962" stroke-width="1" opacity="0.5"/>
+  <text x="110" y="144" fill="#c9a962" font-family="monospace" font-size="10">MOTOR_START</text>
+  <text x="320" y="144" fill="#666" font-family="monospace" font-size="10">2026-01-16 14:32:01</text>
+  <circle cx="80" cy="200" r="6" fill="#333"/>
+  <rect x="100" y="188" width="180" height="24" rx="2" fill="#141414"/>
+  <text x="110" y="204" fill="#888" font-family="monospace" font-size="10">TEMP_ALERT</text>
+  <text x="320" y="204" fill="#666" font-family="monospace" font-size="10">2026-01-16 14:31:58</text>
+  <circle cx="80" cy="260" r="6" fill="#333"/>
+  <rect x="100" y="248" width="160" height="24" rx="2" fill="#141414"/>
+  <text x="110" y="264" fill="#888" font-family="monospace" font-size="10">VALVE_OPEN</text>
+  <circle cx="80" cy="320" r="6" fill="#333"/>
+  <rect x="100" y="308" width="220" height="24" rx="2" fill="#141414"/>
+  <text x="110" y="324" fill="#888" font-family="monospace" font-size="10">PRODUCTION_CYCLE_END</text>
+  <rect x="500" y="80" width="250" height="340" rx="4" fill="#141414" stroke="#222"/>
+  <text x="520" y="110" fill="#c9a962" font-family="monospace" font-size="11">EVENT STORE</text>
+  <rect x="520" y="130" width="210" height="8" rx="2" fill="#333"/>
+  <rect x="520" y="150" width="180" height="8" rx="2" fill="#333"/>
+  <rect x="520" y="170" width="200" height="8" rx="2" fill="#333"/>
+  <text x="520" y="220" fill="#666" font-family="monospace" font-size="10">1,247 events</text>
+  <text x="520" y="240" fill="#666" font-family="monospace" font-size="10">Replay ready</text>
+</svg>

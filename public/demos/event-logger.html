@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo — Event Logger</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; }
+    body { font-family: ui-monospace, monospace; background: #0a0a0a; color: #eceae6; min-height: 100vh; padding: 1.5rem; }
+    header { display: flex; justify-content: space-between; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #1f1f1f; }
+    a { color: #c9a962; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; }
+    .wrap { display: grid; gap: 1rem; grid-template-columns: 1.4fr 1fr; max-width: 960px; }
+    @media (max-width: 720px) { .wrap { grid-template-columns: 1fr; } }
+    .panel { background: #111; border: 1px solid #1f1f1f; padding: 1rem; }
+    .event { display: flex; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid #1a1a1a; font-size: 0.8rem; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #c9a962; margin-top: 0.35rem; flex-shrink: 0; }
+    .time { color: #666; font-size: 0.7rem; }
+    button { background: #c9a962; color: #0a0a0a; border: none; padding: 0.5rem 0.85rem; font-family: inherit; font-size: 0.75rem; cursor: pointer; text-transform: uppercase; letter-spacing: 0.06em; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <div style="font-size:0.7rem;color:#c9a962;letter-spacing:0.15em;text-transform:uppercase">Demo · Event Sourcing</div>
+      <strong>Industrial Event Logger</strong>
+    </div>
+    <a href="../">← Portfolio</a>
+  </header>
+  <div class="wrap">
+    <div class="panel">
+      <div style="display:flex;justify-content:space-between;margin-bottom:0.75rem">
+        <span style="font-size:0.7rem;color:#666">EVENT STREAM</span>
+        <button type="button" id="emit">Emit event</button>
+      </div>
+      <div id="list"></div>
+    </div>
+    <div class="panel">
+      <div style="font-size:0.7rem;color:#c9a962;margin-bottom:0.75rem">EVENT STORE</div>
+      <div style="font-size:0.85rem;margin-bottom:0.5rem"><span id="count">0</span> events</div>
+      <div style="font-size:0.75rem;color:#666">Replay ready · immutable log</div>
+    </div>
+  </div>
+  <script>
+    const types = ["MOTOR_START", "TEMP_ALERT", "VALVE_OPEN", "PRODUCTION_CYCLE_END", "SENSOR_OK"];
+    const list = document.getElementById("list");
+    let n = 0;
+    function add() {
+      n++;
+      const type = types[Math.floor(Math.random() * types.length)];
+      const el = document.createElement("div");
+      el.className = "event";
+      el.innerHTML = `<span class="dot"></span><div><div>${type}</div><div class="time">${new Date().toLocaleTimeString("pt-BR")}</div></div>`;
+      list.prepend(el);
+      if (list.children.length > 8) list.lastChild.remove();
+      document.getElementById("count").textContent = String(1240 + n);
+    }
+    document.getElementById("emit").onclick = add;
+    add(); add(); add();
+    setInterval(add, 2800);
+  </script>
+</body>
+</html>

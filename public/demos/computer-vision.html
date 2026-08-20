@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo — Computer Vision</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; }
+    body { font-family: ui-monospace, monospace; background: #0a0a0a; color: #eceae6; min-height: 100vh; padding: 1.5rem; }
+    header { display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #1f1f1f; }
+    a { color: #38bdf8; text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; }
+    .stage { position: relative; background: #0d1117; border: 1px solid #222; aspect-ratio: 16/10; max-width: 900px; margin: 0 auto; overflow: hidden; }
+    canvas { width: 100%; height: 100%; display: block; }
+    .bar { max-width: 900px; margin: 1rem auto 0; display: flex; justify-content: space-between; font-size: 0.75rem; color: #666; }
+    .ok { color: #22c55e; }
+    .bad { color: #ef4444; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <div style="font-size:0.7rem;color:#38bdf8;letter-spacing:0.15em;text-transform:uppercase">Demo · Computer Vision</div>
+      <strong>Defect detection</strong>
+    </div>
+    <a href="../">← Portfolio</a>
+  </header>
+  <div class="stage"><canvas id="c"></canvas></div>
+  <div class="bar">
+    <span>TensorFlow · OpenCV</span>
+    <span class="ok" id="pass">PASS RATE 96.3%</span>
+  </div>
+  <script>
+    const canvas = document.getElementById("c");
+    const ctx = canvas.getContext("2d");
+    let t = 0;
+    function resize() {
+      canvas.width = canvas.clientWidth * devicePixelRatio;
+      canvas.height = canvas.clientHeight * devicePixelRatio;
+      ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+    }
+    window.addEventListener("resize", resize);
+    const boxes = [
+      { x: 0.25, y: 0.35, w: 0.15, h: 0.2, label: "DEFECT", score: 0.94, bad: true },
+      { x: 0.55, y: 0.45, w: 0.12, h: 0.15, label: "OK", score: 0.99, bad: false },
+      { x: 0.4, y: 0.65, w: 0.14, h: 0.18, label: "DEFECT", score: 0.87, bad: true },
+    ];
+    function frame() {
+      t += 0.02;
+      const w = canvas.clientWidth, h = canvas.clientHeight;
+      ctx.fillStyle = "#0d1117";
+      ctx.fillRect(0, 0, w, h);
+      for (let i = 0; i < 8; i++) {
+        ctx.fillStyle = `rgba(56,189,248,${0.03 + (i % 3) * 0.02})`;
+        ctx.fillRect((i * 90 + t * 30) % w, (i * 50) % h, 60, 40);
+      }
+      boxes.forEach((b, i) => {
+        const ox = Math.sin(t + i) * 6;
+        const x = b.x * w + ox, y = b.y * h, bw = b.w * w, bh = b.h * h;
+        ctx.strokeStyle = b.bad ? "#ef4444" : "#22c55e";
+        ctx.lineWidth = 2;
+        ctx.setLineDash(b.bad ? [6, 4] : []);
+        ctx.strokeRect(x, y, bw, bh);
+        ctx.setLineDash([]);
+        ctx.fillStyle = b.bad ? "#ef4444" : "#22c55e";
+        ctx.font = "12px monospace";
+        ctx.fillText(`${b.label} ${b.score.toFixed(2)}`, x, y - 6);
+      });
+      document.getElementById("pass").textContent = "PASS RATE " + (95.5 + Math.sin(t) * 1.2).toFixed(1) + "%";
+      requestAnimationFrame(frame);
+    }
+    resize();
+    frame();
+  </script>
+</body>
+</html>

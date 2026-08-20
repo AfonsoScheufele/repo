@@ -50,6 +50,7 @@ export interface CaseStudy {
 
 export interface RepoMedia {
   screenshot: string;
+  demo?: string | null;
   caseStudy: CaseStudy;
 }
 

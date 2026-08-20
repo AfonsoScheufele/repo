@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { getCaseStudy, getScreenshot } from "../data/media";
+import { getCaseStudy, getDemo, getScreenshot } from "../data/media";
 import { getRepoVisual } from "../lib/repoVisuals";
 import { useModal } from "../context/ModalContext";
 import { motionTheme } from "../motion.theme";
@@ -21,6 +21,7 @@ export function CaseStudyModal() {
 
   const caseStudy = selectedRepo ? getCaseStudy(selectedRepo.name) : null;
   const screenshot = selectedRepo ? getScreenshot(selectedRepo.name) : null;
+  const demo = selectedRepo ? getDemo(selectedRepo.name) : null;
   const visual = selectedRepo ? getRepoVisual(selectedRepo.name) : null;
 
   return (
@@ -106,7 +107,17 @@ export function CaseStudyModal() {
                 </div>
               </div>
 
-              <div className="mt-8 flex gap-4">
+              <div className="mt-8 flex flex-wrap gap-4">
+                {demo && (
+                  <a
+                    href={demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex border border-[#22c55e] px-5 py-2.5 text-xs uppercase tracking-widest text-[#22c55e] transition hover:bg-[#22c55e] hover:text-[#050505]"
+                  >
+                    Ver demo
+                  </a>
+                )}
                 <a
                   href={selectedRepo.url}
                   target="_blank"

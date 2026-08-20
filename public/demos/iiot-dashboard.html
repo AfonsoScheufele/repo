@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo — IIoT Dashboard</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; }
+    body { font-family: ui-monospace, monospace; background: #0a0a0a; color: #eceae6; min-height: 100vh; padding: 1.5rem; }
+    a { color: #2dd4bf; }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid #1f1f1f; padding-bottom: 1rem; }
+    .grid { display: grid; gap: 1rem; grid-template-columns: 200px 1fr; }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+    .panel { background: #111; border: 1px solid #1f1f1f; border-radius: 4px; padding: 1rem; }
+    .status { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 50% { opacity: 0.4; } }
+    canvas { width: 100%; height: 180px; background: #0d1117; border-radius: 2px; }
+    .metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 1rem; }
+    .metric { background: #141414; padding: 0.75rem; border: 1px solid #222; }
+    .metric b { display: block; font-size: 1.5rem; color: #2dd4bf; }
+    .metric span { font-size: 0.7rem; color: #666; text-transform: uppercase; }
+    nav a { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <div style="font-size:0.7rem;color:#2dd4bf;letter-spacing:0.15em;text-transform:uppercase">Demo · IIoT</div>
+      <strong>PLC → Node → React</strong>
+    </div>
+    <nav><a href="../">← Portfolio</a></nav>
+  </header>
+  <div class="grid">
+    <aside class="panel">
+      <div style="font-size:0.7rem;color:#666;margin-bottom:0.75rem">DEVICES</div>
+      <div class="status" style="margin-bottom:0.5rem"><span class="dot"></span> PLC-01 RUNNING</div>
+      <div class="status" style="margin-bottom:0.5rem"><span class="dot" style="background:#f59e0b"></span> SENSOR-A WARN</div>
+      <div class="status"><span class="dot"></span> GATEWAY OK</div>
+    </aside>
+    <main>
+      <div class="panel">
+        <div style="font-size:0.7rem;color:#666;margin-bottom:0.5rem">THROUGHPUT · LIVE</div>
+        <canvas id="chart" width="800" height="180"></canvas>
+        <div class="metrics">
+          <div class="metric"><b id="rate">98.2%</b><span>Uptime</span></div>
+          <div class="metric"><b id="msg">0</b><span>Msgs / s</span></div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script>
+    const canvas = document.getElementById("chart");
+    const ctx = canvas.getContext("2d");
+    const points = Array.from({ length: 40 }, () => 40 + Math.random() * 80);
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.strokeStyle = "#2dd4bf";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      points.forEach((y, i) => {
+        const x = (i / (points.length - 1)) * canvas.width;
+        i === 0 ? ctx.moveTo(x, canvas.height - y) : ctx.lineTo(x, canvas.height - y);
+      });
+      ctx.stroke();
+    }
+    setInterval(() => {
+      points.shift();
+      points.push(40 + Math.random() * 80);
+      document.getElementById("msg").textContent = String(80 + Math.floor(Math.random() * 40));
+      document.getElementById("rate").textContent = (97 + Math.random() * 2.5).toFixed(1) + "%";
+      draw();
+    }, 600);
+    draw();
+  </script>
+</body>
+</html>

@@ -14,3 +14,8 @@ export function getCaseStudy(repoName: string): CaseStudy | null {
 export function getScreenshot(repoName: string): string | null {
   return media[repoName]?.screenshot ?? null;
 }
+
+export function getDemo(repoName: string): string | null {
+  const demo = media[repoName]?.demo;
+  return demo ?? null;
+}

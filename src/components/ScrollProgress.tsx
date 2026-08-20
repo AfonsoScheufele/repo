@@ -7,10 +7,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const SECTIONS = [
   { id: "hero", label: "01" },
-  { id: "track", label: "02" },
-  { id: "timeline", label: "03" },
+  { id: "sobre", label: "02" },
+  { id: "track", label: "03" },
   { id: "repos", label: "04" },
-  { id: "conquistas", label: "05" },
+  { id: "contato", label: "05" },
 ];
 
 export function ScrollProgress() {

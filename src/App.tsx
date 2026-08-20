@@ -5,18 +5,22 @@ import { CaseStudyModal } from "./components/CaseStudyModal";
 import { ModalProvider } from "./context/ModalContext";
 import { HeroSection } from "./sections/HeroSection";
 import { MarqueeSection } from "./sections/MarqueeSection";
+import { AboutSection } from "./sections/AboutSection";
 import { ManifestoSection } from "./sections/ManifestoSection";
 import { TrackSection } from "./sections/TrackSection";
 import { JourneyTimeline } from "./sections/JourneyTimeline";
+import { DomainStackSection } from "./sections/DomainStackSection";
 import { ProfileHighlight } from "./sections/ProfileHighlight";
 import { StatsPinned } from "./sections/StatsPinned";
 import { LanguageChart } from "./sections/LanguageChart";
 import { ReposHorizontal } from "./sections/ReposHorizontal";
 import { AchievementsGrid } from "./sections/AchievementsGrid";
+import { ContactSection } from "./sections/ContactSection";
 import { FooterSection } from "./sections/FooterSection";
 import { MagneticLink } from "./components/MagneticLink";
 import { useLenis } from "./hooks/useLenis";
 import { data } from "./data";
+import { personalData } from "./data/personal";
 import { motion, AnimatePresence } from "motion/react";
 
 const CustomCursor = lazy(() =>
@@ -34,10 +38,11 @@ function Nav({ visible }: { visible: boolean }) {
   }, []);
 
   const links = [
+    { href: "#sobre", label: "Sobre" },
     { href: "#track", label: "Tracks" },
-    { href: "#timeline", label: "Timeline" },
     { href: "#repos", label: "Repos" },
-    { href: "#conquistas", label: "Conquistas" },
+    { href: "#contato", label: "Contato" },
+    { href: personalData.cvPath, label: "CV", external: true },
     { href: data.profile.githubUrl, label: "GitHub", external: true },
   ];
 
@@ -125,14 +130,17 @@ export default function App() {
       <main>
         <HeroSection ready={ready} />
         <MarqueeSection />
+        <AboutSection />
         <ManifestoSection />
         <TrackSection />
         <JourneyTimeline />
+        <DomainStackSection />
         <ProfileHighlight />
         <StatsPinned />
         <LanguageChart />
         <ReposHorizontal />
         <AchievementsGrid />
+        <ContactSection />
       </main>
       <FooterSection />
       <CaseStudyModal />

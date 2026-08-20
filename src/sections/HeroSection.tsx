@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { animate, stagger } from "animejs";
 import { data } from "../data";
+import { personalData } from "../data/personal";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -120,6 +121,32 @@ export function HeroSection({ ready = true }: { ready?: boolean }) {
       >
         {data.profile.location ?? "Brasil"} · @{data.profile.username} · Dev & Industrial
       </p>
+
+      <div
+        className="relative z-10 mt-8 flex flex-wrap gap-3"
+        style={reduced || ready ? { opacity: 1 } : { opacity: 0 }}
+      >
+        <a
+          href="#contato"
+          className="border border-[#ff5c35] bg-[#ff5c35] px-5 py-2.5 text-xs uppercase tracking-widest text-[#050505] transition hover:bg-transparent hover:text-[#ff5c35]"
+        >
+          Disponível para projetos
+        </a>
+        <a
+          href={personalData.cvPath}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="border border-white/15 px-5 py-2.5 text-xs uppercase tracking-widest text-[#eceae6] transition hover:border-[#ff5c35]/40 hover:text-[#ff5c35]"
+        >
+          Ver CV
+        </a>
+        <a
+          href="#sobre"
+          className="border border-white/15 px-5 py-2.5 text-xs uppercase tracking-widest text-[#8a8580] transition hover:text-[#eceae6]"
+        >
+          Sobre mim
+        </a>
+      </div>
 
       <div
         ref={scrollHintRef}

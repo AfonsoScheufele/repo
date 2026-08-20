@@ -1,0 +1,61 @@
+{
+  "headline": "Dev que une chão de fábrica e software.",
+  "bio": [
+    "Sou Afonso Scheufele, de Concórdia (SC). Construo sistemas onde industrial e código se encontram — IIoT, visão computacional, gêmeos digitais e dashboards em tempo real.",
+    "Meu foco é transformar dados de PLC, sensores e processos em software utilizável: APIs, React, Event Sourcing e inspeção com TensorFlow/OpenCV.",
+    "Acredito em tecnologia com propósito — precisão, curiosidade e impacto no dia a dia da indústria e das pessoas."
+  ],
+  "mission": "Construir soluções que conectam engenharia, software e impacto real no chão de fábrica.",
+  "vision": "Democratizar ferramentas industriais e tornar a inovação acessível e compreensível.",
+  "values": [
+    { "title": "Curiosidade", "description": "Aprender continuamente e explorar stacks novas com rigor." },
+    { "title": "Precisão", "description": "Entregar com qualidade — do sensor ao dashboard." },
+    { "title": "Transparência", "description": "Código aberto, comunicação clara e rastreabilidade." }
+  ],
+  "availableFor": [
+    "Projetos IIoT & automação",
+    "Dashboards e APIs em tempo real",
+    "Visão computacional industrial",
+    "Freelance / colaboração open source"
+  ],
+  "contact": {
+    "email": "martinischeufeleafonso@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/afonso-scheufele",
+    "github": "https://github.com/AfonsoScheufele",
+    "twitter": "https://x.com/AfonsoScheufele",
+    "location": "Concórdia, SC — Brasil"
+  },
+  "cvPath": "./cv.html",
+  "domains": [
+    {
+      "id": "iiot",
+      "title": "IIoT & PLC",
+      "description": "Simulação de PLC, APIs Node e dashboards React com dados live.",
+      "tags": ["OPC-UA", "WebSocket", "Node.js", "React", "TypeScript"]
+    },
+    {
+      "id": "cv",
+      "title": "Computer Vision",
+      "description": "Inspeção automatizada e detecção de defeitos em linha.",
+      "tags": ["TensorFlow", "OpenCV", "Python", "ML"]
+    },
+    {
+      "id": "twin",
+      "title": "Digital Twin 3D",
+      "description": "Interfaces 3D com Three.js para visualização industrial.",
+      "tags": ["Three.js", "WebGL", "JavaScript"]
+    },
+    {
+      "id": "events",
+      "title": "Event Sourcing",
+      "description": "Auditoria e replay de eventos industriais.",
+      "tags": ["Event Sourcing", "Audit Trail", "HTML"]
+    },
+    {
+      "id": "product",
+      "title": "Produto & ERP",
+      "description": "Gestão financeira e sistemas de controle.",
+      "tags": ["JavaScript", "Node.js", "Finanças"]
+    }
+  ]
+}

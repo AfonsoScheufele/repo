@@ -1,5 +1,5 @@
 import { getRepoVisual } from "../lib/repoVisuals";
-import { getScreenshot } from "../data/media";
+import { getDemo, getScreenshot } from "../data/media";
 import { useModal } from "../context/ModalContext";
 import type { GitHubRepo } from "../lib/types";
 
@@ -13,6 +13,7 @@ const LANG_COLORS: Record<string, string> = {
 function RepoThumbnail({ repo, index }: { repo: GitHubRepo; index: number }) {
   const visual = getRepoVisual(repo.name);
   const screenshot = getScreenshot(repo.name);
+  const demo = getDemo(repo.name);
   const shortName = repo.name.replace(/-/g, " ").split(" ").slice(0, 2).join(" ");
 
   return (
@@ -44,12 +45,19 @@ function RepoThumbnail({ repo, index }: { repo: GitHubRepo; index: number }) {
       )}
 
       <div className="absolute inset-0 flex flex-col justify-between p-5">
-        <span
-          className="w-fit rounded-sm border border-white/10 bg-black/50 px-2.5 py-1 text-[10px] uppercase tracking-widest backdrop-blur-sm"
-          style={{ color: visual.accent }}
-        >
-          {visual.tag}
-        </span>
+        <div className="flex flex-wrap gap-2">
+          <span
+            className="w-fit rounded-sm border border-white/10 bg-black/50 px-2.5 py-1 text-[10px] uppercase tracking-widest backdrop-blur-sm"
+            style={{ color: visual.accent }}
+          >
+            {visual.tag}
+          </span>
+          {demo && (
+            <span className="w-fit rounded-sm border border-[#22c55e]/40 bg-black/50 px-2.5 py-1 text-[10px] uppercase tracking-widest text-[#22c55e] backdrop-blur-sm">
+              Live demo
+            </span>
+          )}
+        </div>
         <div>
           <p className="text-[10px] uppercase tracking-[0.3em] text-white/40">
             {repo.language ?? "Repo"}
@@ -70,6 +78,7 @@ function RepoThumbnail({ repo, index }: { repo: GitHubRepo; index: number }) {
 export function RepoCard({ repo, index }: { repo: GitHubRepo; index: number }) {
   const { openRepo } = useModal();
   const visual = getRepoVisual(repo.name);
+  const demo = getDemo(repo.name);
 
   return (
     <article className="repo-card-h group relative flex min-h-[520px] flex-col overflow-hidden rounded-sm border border-white/8 bg-[#0a0a0a] transition-colors hover:border-white/15">
@@ -107,15 +116,36 @@ export function RepoCard({ repo, index }: { repo: GitHubRepo; index: number }) {
           </div>
         </div>
       </button>
-      <a
-        href={repo.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="border-t border-white/5 px-5 py-3 text-center text-[10px] uppercase tracking-widest text-[#6b6560] transition hover:bg-white/5 hover:text-[#eceae6]"
-        onClick={(e) => e.stopPropagation()}
-      >
-        Ver no GitHub
-      </a>
+      <div className="grid grid-cols-2 border-t border-white/5">
+        {demo ? (
+          <a
+            href={demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-3 text-center text-[10px] uppercase tracking-widest text-[#22c55e] transition hover:bg-white/5"
+            onClick={(e) => e.stopPropagation()}
+          >
+            Ver demo
+          </a>
+        ) : (
+          <button
+            type="button"
+            onClick={() => openRepo(repo)}
+            className="px-5 py-3 text-center text-[10px] uppercase tracking-widest text-[#6b6560] transition hover:bg-white/5 hover:text-[#eceae6]"
+          >
+            Case study
+          </button>
+        )}
+        <a
+          href={repo.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="border-l border-white/5 px-5 py-3 text-center text-[10px] uppercase tracking-widest text-[#6b6560] transition hover:bg-white/5 hover:text-[#eceae6]"
+          onClick={(e) => e.stopPropagation()}
+        >
+          GitHub
+        </a>
+      </div>
     </article>
   );
 }

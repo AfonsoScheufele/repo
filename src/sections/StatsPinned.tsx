@@ -26,28 +26,37 @@ function AnimatedStat({
 
   useEffect(() => {
     if (!active || !ref.current) return;
+
+    const format = (n: number) => `${Math.round(n)}${stat.suffix ?? ""}`;
+
     if (reduced) {
-      ref.current.textContent = `${stat.value}${stat.suffix ?? ""}`;
+      ref.current.textContent = format(stat.value);
       return;
     }
 
     const obj = { val: 0 };
-    animate(obj, {
+    const anim = animate(obj, {
       val: stat.value,
-      round: 1,
-      duration: 2200,
+      duration: 1800,
       ease: "outExpo",
       onUpdate: () => {
-        if (ref.current) ref.current.textContent = `${obj.val}${stat.suffix ?? ""}`;
+        if (ref.current) ref.current.textContent = format(obj.val);
+      },
+      onComplete: () => {
+        if (ref.current) ref.current.textContent = format(stat.value);
       },
     });
+
+    return () => {
+      anim.pause();
+    };
   }, [active, stat, reduced]);
 
   return (
-    <div className="border-t border-white/10 pt-8">
+    <div className="min-w-0 overflow-hidden border-t border-white/10 pt-6">
       <span
         ref={ref}
-        className="block font-display text-[clamp(4rem,12vw,9rem)] leading-none text-[#ff5c35]"
+        className="block truncate font-display text-[clamp(2.75rem,7vw,5.5rem)] leading-none tabular-nums tracking-tight text-[#ff5c35]"
       >
         0{stat.suffix ?? ""}
       </span>
@@ -89,7 +98,7 @@ export function StatsPinned() {
       mm.add("(min-width: 768px)", () => {
         gsap.fromTo(
           ".stat-label-big",
-          { opacity: 0, x: -60 },
+          { opacity: 0, x: -40 },
           {
             opacity: 1,
             x: 0,
@@ -116,7 +125,7 @@ export function StatsPinned() {
     : null;
 
   return (
-    <section ref={sectionRef} className="relative">
+    <section ref={sectionRef} className="relative overflow-hidden">
       <div ref={pinRef} className="flex min-h-screen flex-col justify-center px-[5vw] py-24">
         <p className="stat-label-big mb-4 text-xs uppercase tracking-[0.4em] text-[#ff5c35]">
           Números
@@ -126,7 +135,7 @@ export function StatsPinned() {
             Último push · {lastPushLabel}
           </p>
         )}
-        <div className="grid grid-cols-2 gap-x-12 gap-y-4 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-8 lg:grid-cols-4 lg:gap-x-8">
           {stats.map((stat) => (
             <AnimatedStat key={stat.label} stat={stat} active={active} />
           ))}

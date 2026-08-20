@@ -19,11 +19,13 @@ export function ProfileHighlight() {
     const obj = { n: 0 };
     animate(obj, {
       n: profileReadme.stars,
-      round: 1,
       duration: 1500,
       ease: "outExpo",
       onUpdate: () => {
-        if (starsRef.current) starsRef.current.textContent = String(obj.n);
+        if (starsRef.current) starsRef.current.textContent = String(Math.round(obj.n));
+      },
+      onComplete: () => {
+        if (starsRef.current) starsRef.current.textContent = String(profileReadme.stars);
       },
     });
   }, [profileReadme.stars, reduced]);
@@ -49,9 +51,14 @@ export function ProfileHighlight() {
             </span>
             <span className="ml-2 text-xl text-[#6b6560]">stars</span>
           </div>
-          <p className="max-w-sm text-sm text-[#6b6560]">
-            Vitrine profissional no GitHub — @{data.profile.username}
-          </p>
+          <div className="max-w-sm">
+            <p className="text-sm text-[#6b6560]">
+              Profile README no GitHub — vitrine com badges, stats e apresentação profissional.
+            </p>
+            <p className="mt-2 text-xs uppercase tracking-widest text-[#8a8580]">
+              @{data.profile.username} · {data.stats.followers} followers
+            </p>
+          </div>
         </div>
         <span className="mt-6 inline-block text-xs uppercase tracking-widest text-[#ff5c35] opacity-0 transition group-hover:opacity-100">
           Ver profile →

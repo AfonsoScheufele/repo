@@ -18,6 +18,25 @@ npm run dev
 - Galeria horizontal com mocks SVG + case study modal
 - Cursor customizado (desktop), progress bar, nav mobile
 
+## Pessoal & contato
+
+Edite [`src/data/personal.json`](src/data/personal.json): bio, missão/visão/valores, e-mail, LinkedIn, “disponível para”.
+
+CV imprimível: [`public/cv.html`](public/cv.html) (abra e use “Salvar / Imprimir PDF”).
+
+Demos interativas: [`public/demos/`](public/demos/) — ligadas em [`src/data/repo-media.json`](src/data/repo-media.json).
+
+## Deploy (GitHub Pages)
+
+```bash
+gh auth login -s workflow
+git push origin main
+```
+
+Ativar Pages: **Settings → Pages → Source: GitHub Actions**.
+
+URL esperada: `https://afonsoscheufele.github.io/repo/`
+
 ## Dados
 
 ```bash

@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "motion/react";
 import { MagneticLink } from "../components/MagneticLink";
 import { data } from "../data";
+import { personalData } from "../data/personal";
 import { motionTheme } from "../motion.theme";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 
@@ -39,12 +40,12 @@ export function FooterSection() {
 
   const socials = [
     { label: "GitHub", href: data.profile.githubUrl },
+    { label: "LinkedIn", href: personalData.contact.linkedin },
+    { label: "E-mail", href: `mailto:${personalData.contact.email}` },
     ...(data.profile.twitter
       ? [{ label: "X / Twitter", href: `https://x.com/${data.profile.twitter}` }]
       : []),
-    ...(data.profile.location
-      ? [{ label: data.profile.location, href: "#hero" as string }]
-      : []),
+    { label: "CV", href: personalData.cvPath },
   ];
 
   return (

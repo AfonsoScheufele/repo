@@ -9,21 +9,39 @@
     "memberSince": "2024-11-20T00:26:30Z"
   },
   "stats": {
-    "publicRepos": 5,
+    "publicRepos": 6,
     "memberSinceYear": 2024,
     "yearsOnGitHub": 2,
     "languages": [
+      "TypeScript",
       "JavaScript",
       "Python",
-      "HTML",
-      "TypeScript"
+      "HTML"
     ],
     "totalStars": 11,
     "followers": 46,
     "following": 38,
-    "lastPush": "2026-01-26T17:15:52Z"
+    "lastPush": "2026-08-20T16:46:36Z"
   },
   "repos": [
+    {
+      "name": "repo",
+      "description": null,
+      "language": "TypeScript",
+      "stars": 0,
+      "forks": 0,
+      "url": "https://github.com/AfonsoScheufele/repo",
+      "topics": [],
+      "createdAt": "2026-08-19T19:33:02Z",
+      "updatedAt": "2026-08-20T16:46:54Z",
+      "lastPush": "2026-08-20T16:46:36Z",
+      "languages": {
+        "TypeScript": 85162,
+        "HTML": 26792,
+        "CSS": 2539
+      },
+      "category": "software"
+    },
     {
       "name": "money-manager",
       "description": "Personal finance management system for tracking accounts, transactions, and budget control",
@@ -127,7 +145,7 @@
     },
     {
       "id": "gh-repos",
-      "title": "5 Projetos Públicos",
+      "title": "6 Projetos Públicos",
       "description": "De IIoT e visão computacional a dashboards e ERP.",
       "category": "github"
     },
@@ -140,7 +158,7 @@
     },
     {
       "id": "gh-langs",
-      "title": "JavaScript · Python · HTML · TypeScript",
+      "title": "TypeScript · JavaScript · Python · HTML",
       "description": "Stack técnica nos repositórios públicos.",
       "category": "github"
     },
@@ -211,6 +229,12 @@
       "description": "Logger de eventos industriais com auditoria completa e rastreabilidade."
     },
     {
+      "id": "repo-repo",
+      "year": 2026,
+      "title": "repo",
+      "description": "Repositório público."
+    },
+    {
       "id": "repo-money-manager",
       "year": 2026,
       "title": "money-manager",
@@ -257,31 +281,31 @@
     {
       "name": "JavaScript",
       "bytes": 242356,
-      "percent": 46
+      "percent": 38
     },
     {
       "name": "TypeScript",
-      "bytes": 142252,
-      "percent": 27
+      "bytes": 227414,
+      "percent": 35
     },
     {
       "name": "Go",
       "bytes": 76970,
-      "percent": 15
+      "percent": 12
+    },
+    {
+      "name": "HTML",
+      "bytes": 44425,
+      "percent": 7
+    },
+    {
+      "name": "CSS",
+      "bytes": 24146,
+      "percent": 4
     },
     {
       "name": "Python",
       "bytes": 21623,
-      "percent": 4
-    },
-    {
-      "name": "CSS",
-      "bytes": 21607,
-      "percent": 4
-    },
-    {
-      "name": "HTML",
-      "bytes": 17633,
       "percent": 3
     },
     {
@@ -299,5 +323,5 @@
     "stars": 11,
     "url": "https://github.com/AfonsoScheufele/AfonsoScheufele"
   },
-  "fetchedAt": "2026-08-20T13:56:32.348Z"
+  "fetchedAt": "2026-08-20T18:18:33.712Z"
 }

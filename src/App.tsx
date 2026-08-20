@@ -18,6 +18,7 @@ import { AchievementsGrid } from "./sections/AchievementsGrid";
 import { ContactSection } from "./sections/ContactSection";
 import { FooterSection } from "./sections/FooterSection";
 import { MagneticLink } from "./components/MagneticLink";
+import GradualBlur from "./components/GradualBlur";
 import { useLenis } from "./hooks/useLenis";
 import { data } from "./data";
 import { personalData } from "./data/personal";
@@ -144,6 +145,17 @@ export default function App() {
       </main>
       <FooterSection />
       <CaseStudyModal />
+      <GradualBlur
+        target="page"
+        position="bottom"
+        height="6rem"
+        strength={2}
+        divCount={5}
+        curve="bezier"
+        exponential
+        opacity={1}
+        zIndex={-70}
+      />
     </ModalProvider>
   );
 }

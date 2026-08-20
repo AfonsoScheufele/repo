@@ -1,8 +1,5 @@
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import TextLoop from "../components/TextLoop";
 import { data } from "../data";
-import { useReducedMotion } from "../hooks/useReducedMotion";
 
 const TAGS = [
   ...data.stats.languages,
@@ -17,37 +14,30 @@ const TAGS = [
 ];
 
 export function MarqueeSection() {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const reduced = useReducedMotion();
-
-  const text = TAGS.filter(Boolean).join("  ·  ") + "  ·  ";
-
-  useGSAP(
-    () => {
-      if (reduced || !trackRef.current) return;
-
-      gsap.to(trackRef.current, {
-        xPercent: -50,
-        ease: "none",
-        duration: 30,
-        repeat: -1,
-      });
-    },
-    { dependencies: [reduced] },
-  );
+  const text = TAGS.filter(Boolean).join(" · ");
 
   return (
-    <section className="overflow-hidden border-y border-white/5 py-6">
-      <div ref={trackRef} className="marquee-track">
-        {[text, text].map((chunk, i) => (
-          <span
-            key={i}
-            className="whitespace-nowrap px-4 font-display text-[clamp(2rem,5vw,4rem)] uppercase tracking-wider text-[#ff5c35]/80"
-          >
-            {chunk}
-          </span>
-        ))}
-      </div>
+    <section className="relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 overflow-hidden">
+      <TextLoop
+        text={text}
+        shape="line"
+        path="M -400 90 L 1600 90"
+        viewBox="0 0 1200 180"
+        speed={90}
+        direction="forward"
+        separator="·"
+        curviness={0}
+        fontSize={72}
+        fontWeight={400}
+        letterSpacing={4}
+        uppercase
+        color="#eceae6"
+        ribbon
+        ribbonColor="#ff5c35"
+        ribbonWidth={120}
+        pauseOnHover
+        className="font-display text-loop--marquee"
+      />
     </section>
   );
 }

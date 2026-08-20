@@ -1,0 +1,30 @@
+.text-loop {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.text-loop-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.text-loop-text {
+  user-select: none;
+  font-family: "Bebas Neue", "Syne", system-ui, sans-serif;
+}
+
+.text-loop-measure {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.text-loop--marquee {
+  width: 100%;
+}
+
+.text-loop--marquee .text-loop-svg {
+  width: 100%;
+  height: clamp(5.5rem, 14vw, 9rem);
+}

@@ -28,14 +28,18 @@ Demos interativas: [`public/demos/`](public/demos/) — ligadas em [`src/data/re
 
 ## Deploy (GitHub Pages)
 
+O código já está em `main`. Para ativar o deploy automático:
+
 ```bash
 gh auth login -s workflow
 git push origin main
 ```
 
-Ativar Pages: **Settings → Pages → Source: GitHub Actions**.
+(O commit do workflow pode estar só local se o token não tiver escopo `workflow`.)
 
-URL esperada: `https://afonsoscheufele.github.io/repo/`
+Depois: **Settings → Pages → Source: GitHub Actions**.
+
+URL: `https://afonsoscheufele.github.io/repo/`
 
 ## Dados
 

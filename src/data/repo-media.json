@@ -43,5 +43,14 @@
       "stack": ["TypeScript", "Node.js", "React", "WebSocket"],
       "outcome": "Stack IIoT completa: PLC → API → dashboard React com dados live."
     }
+  },
+  "rotapay": {
+    "screenshot": "/screenshots/rotapay.svg",
+    "demo": null,
+    "caseStudy": {
+      "challenge": "Operar frete BR com papéis, mapa e Pix só após a entrega — sem fingir TED no sandbox.",
+      "stack": ["React", "TypeScript", "FastAPI", "PostgreSQL", "Redis", "RQ"],
+      "outcome": "TMS lite com máquina de estados, webhook Pix via fila (retry + falha visível), SLA por distância e testes de API no fluxo crítico."
+    }
   }
 }

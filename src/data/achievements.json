@@ -9,21 +9,80 @@
     "memberSince": "2024-11-20T00:26:30Z"
   },
   "stats": {
-    "publicRepos": 6,
+    "publicRepos": 9,
     "memberSinceYear": 2024,
     "yearsOnGitHub": 2,
     "languages": [
       "TypeScript",
-      "JavaScript",
       "Python",
+      "JavaScript",
       "HTML"
     ],
     "totalStars": 11,
     "followers": 46,
     "following": 38,
-    "lastPush": "2026-08-20T16:46:36Z"
+    "lastPush": "2026-09-22T17:42:58Z"
   },
   "repos": [
+    {
+      "name": "entrega-ja",
+      "description": null,
+      "language": "TypeScript",
+      "stars": 0,
+      "forks": 0,
+      "url": "https://github.com/AfonsoScheufele/entrega-ja",
+      "topics": [],
+      "createdAt": "2026-09-22T11:53:46Z",
+      "updatedAt": "2026-09-22T17:10:42Z",
+      "lastPush": "2026-09-22T17:10:32Z",
+      "languages": {
+        "TypeScript": 131712,
+        "CSS": 6414,
+        "JavaScript": 899,
+        "HTML": 648
+      },
+      "category": "software"
+    },
+    {
+      "name": "rotapay",
+      "description": "TMS lite BR: frete com papéis, mapa OpenStreetMap, Pix e webhook via fila RQ.",
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "url": "https://github.com/AfonsoScheufele/rotapay",
+      "topics": [],
+      "createdAt": "2026-09-22T11:52:14Z",
+      "updatedAt": "2026-09-22T17:43:03Z",
+      "lastPush": "2026-09-22T17:42:58Z",
+      "languages": {
+        "Python": 89677,
+        "TypeScript": 31563,
+        "CSS": 11025,
+        "HTML": 856,
+        "Mako": 635,
+        "Dockerfile": 229
+      },
+      "category": "software"
+    },
+    {
+      "name": "salao-beleza",
+      "description": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "url": "https://github.com/AfonsoScheufele/salao-beleza",
+      "topics": [],
+      "createdAt": "2026-08-26T19:16:34Z",
+      "updatedAt": "2026-09-02T13:32:45Z",
+      "lastPush": "2026-09-02T13:26:43Z",
+      "languages": {
+        "JavaScript": 53090,
+        "TypeScript": 34140,
+        "CSS": 26673,
+        "HTML": 896
+      },
+      "category": "software"
+    },
     {
       "name": "repo",
       "description": null,
@@ -33,12 +92,12 @@
       "url": "https://github.com/AfonsoScheufele/repo",
       "topics": [],
       "createdAt": "2026-08-19T19:33:02Z",
-      "updatedAt": "2026-08-20T16:46:54Z",
-      "lastPush": "2026-08-20T16:46:36Z",
+      "updatedAt": "2026-08-20T18:56:24Z",
+      "lastPush": "2026-08-20T18:51:05Z",
       "languages": {
-        "TypeScript": 85162,
+        "TypeScript": 129132,
         "HTML": 26792,
-        "CSS": 2539
+        "CSS": 4176
       },
       "category": "software"
     },
@@ -145,7 +204,7 @@
     },
     {
       "id": "gh-repos",
-      "title": "6 Projetos Públicos",
+      "title": "9 Projetos Públicos",
       "description": "De IIoT e visão computacional a dashboards e ERP.",
       "category": "github"
     },
@@ -158,7 +217,7 @@
     },
     {
       "id": "gh-langs",
-      "title": "TypeScript · JavaScript · Python · HTML",
+      "title": "TypeScript · Python · JavaScript · HTML",
       "description": "Stack técnica nos repositórios públicos.",
       "category": "github"
     },
@@ -201,6 +260,14 @@
       "category": "software",
       "year": 2026,
       "repo": "money-manager"
+    },
+    {
+      "id": "rotapay-tms",
+      "title": "RotaPay — TMS + Pix",
+      "description": "Frete com papéis, mapa e cobrança Pix via webhook em fila RQ (idempotente, retry, falha visível).",
+      "category": "software",
+      "year": 2026,
+      "repo": "rotapay"
     }
   ],
   "timeline": [
@@ -227,6 +294,24 @@
       "year": 2025,
       "title": "Event Sourcing Industrial",
       "description": "Logger de eventos industriais com auditoria completa e rastreabilidade."
+    },
+    {
+      "id": "repo-entrega-ja",
+      "year": 2026,
+      "title": "entrega-ja",
+      "description": "Repositório público."
+    },
+    {
+      "id": "repo-rotapay",
+      "year": 2026,
+      "title": "rotapay",
+      "description": "TMS lite BR: frete com papéis, mapa OpenStreetMap, Pix e webhook via fila RQ."
+    },
+    {
+      "id": "repo-salao-beleza",
+      "year": 2026,
+      "title": "salao-beleza",
+      "description": "Repositório público."
     },
     {
       "id": "repo-repo",
@@ -275,47 +360,58 @@
       "year": 2026,
       "title": "ERP Financeiro Pessoal",
       "description": "Gestão de contas, transações e controle de orçamento em JavaScript."
+    },
+    {
+      "id": "rotapay-tms",
+      "year": 2026,
+      "title": "RotaPay — TMS + Pix",
+      "description": "Frete com papéis, mapa e cobrança Pix via webhook em fila RQ (idempotente, retry, falha visível)."
     }
   ],
   "languageBreakdown": [
     {
-      "name": "JavaScript",
-      "bytes": 242356,
-      "percent": 38
+      "name": "TypeScript",
+      "bytes": 468799,
+      "percent": 44
     },
     {
-      "name": "TypeScript",
-      "bytes": 227414,
-      "percent": 35
+      "name": "JavaScript",
+      "bytes": 296345,
+      "percent": 28
+    },
+    {
+      "name": "Python",
+      "bytes": 111300,
+      "percent": 10
     },
     {
       "name": "Go",
       "bytes": 76970,
-      "percent": 12
-    },
-    {
-      "name": "HTML",
-      "bytes": 44425,
       "percent": 7
     },
     {
       "name": "CSS",
-      "bytes": 24146,
-      "percent": 4
+      "bytes": 69895,
+      "percent": 6
     },
     {
-      "name": "Python",
-      "bytes": 21623,
-      "percent": 3
+      "name": "HTML",
+      "bytes": 46825,
+      "percent": 4
     },
     {
       "name": "Shell",
       "bytes": 3675,
-      "percent": 1
+      "percent": 0
     },
     {
       "name": "Dockerfile",
-      "bytes": 643,
+      "bytes": 872,
+      "percent": 0
+    },
+    {
+      "name": "Mako",
+      "bytes": 635,
       "percent": 0
     }
   ],
@@ -323,5 +419,5 @@
     "stars": 11,
     "url": "https://github.com/AfonsoScheufele/AfonsoScheufele"
   },
-  "fetchedAt": "2026-08-20T18:18:33.712Z"
+  "fetchedAt": "2026-09-22T17:54:42.100Z"
 }

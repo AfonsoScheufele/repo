@@ -65,6 +65,11 @@ function inferCategory(name: string): RepoCategory {
   return industrial ? "industrial" : "software";
 }
 
+const DESCRIPTION_OVERRIDES: Record<string, string> = {
+  rotapay:
+    "TMS lite BR: frete com papéis, mapa OpenStreetMap, Pix e webhook via fila RQ.",
+};
+
 function buildLanguageBreakdown(repos: GitHubRepo[]): LanguageBreakdown[] {
   const totals: Record<string, number> = {};
   for (const repo of repos) {
@@ -148,7 +153,7 @@ async function main() {
     const languages = await fetchRepoLanguages(repo.name);
     repos.push({
       name: repo.name,
-      description: repo.description,
+      description: DESCRIPTION_OVERRIDES[repo.name] ?? repo.description,
       language: repo.language,
       stars: repo.stargazers_count,
       forks: repo.forks_count,

@@ -43,6 +43,12 @@ export const REPO_VISUALS: Record<string, RepoVisual> = {
     tag: "IIoT",
     glyph: "IIoT",
   },
+  rotapay: {
+    gradient: "linear-gradient(165deg, #050505 0%, #0f172a 48%, #0f766e 100%)",
+    accent: "#2dd4bf",
+    tag: "TMS · Pix",
+    glyph: "RP",
+  },
 };
 
 export function getRepoVisual(name: string): RepoVisual {

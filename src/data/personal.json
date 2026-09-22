@@ -16,6 +16,7 @@
     "Projetos IIoT & automação",
     "Dashboards e APIs em tempo real",
     "Visão computacional industrial",
+    "Logística / TMS e pagamentos Pix",
     "Freelance / colaboração open source"
   ],
   "contact": {
@@ -56,6 +57,12 @@
       "title": "Produto & ERP",
       "description": "Gestão financeira e sistemas de controle.",
       "tags": ["JavaScript", "Node.js", "Finanças"]
+    },
+    {
+      "id": "logistics",
+      "title": "Logística & Pix",
+      "description": "TMS lite com frete, mapa e cobrança Pix assíncrona (fila + idempotência).",
+      "tags": ["FastAPI", "React", "Redis", "RQ", "Pix"]
     }
   ]
 }

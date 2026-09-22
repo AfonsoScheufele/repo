@@ -38,5 +38,13 @@
     "category": "software",
     "year": 2026,
     "repo": "money-manager"
+  },
+  {
+    "id": "rotapay-tms",
+    "title": "RotaPay — TMS + Pix",
+    "description": "Frete com papéis, mapa e cobrança Pix via webhook em fila RQ (idempotente, retry, falha visível).",
+    "category": "software",
+    "year": 2026,
+    "repo": "rotapay"
   }
 ]

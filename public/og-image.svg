@@ -1,7 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
-  <rect width="1200" height="630" fill="#050505"/>
-  <text x="80" y="280" fill="#eceae6" font-family="system-ui,sans-serif" font-size="120" font-weight="700">AFONSO</text>
-  <text x="80" y="400" fill="#ff5c35" font-family="system-ui,sans-serif" font-size="120" font-weight="700">SCHEUFELE</text>
-  <text x="80" y="480" fill="#6b6560" font-family="system-ui,sans-serif" font-size="28" letter-spacing="8">IIoT · SOFTWARE · CONQUISTAS</text>
-  <rect x="80" y="520" width="120" height="4" fill="#ff5c35"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#EEF1F4"/>
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#1B4965" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <text x="80" y="250" fill="#14181F" font-family="Archivo, Arial, sans-serif" font-size="96" font-weight="800">AFONSO</text>
+  <text x="80" y="360" fill="#14181F" font-family="Archivo, Arial, sans-serif" font-size="96" font-weight="800">SCHEUFELE</text>
+  <text x="80" y="440" fill="#5A6572" font-family="IBM Plex Sans, Arial, sans-serif" font-size="32">Full stack - Node.js, React, TypeScript</text>
+  <text x="80" y="490" fill="#1B4965" font-family="IBM Plex Mono, monospace" font-size="22">Automacao industrial - Concordia, SC</text>
+  <rect x="80" y="530" width="160" height="6" fill="#E4572E"/>
 </svg>

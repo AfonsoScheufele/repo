@@ -36,61 +36,54 @@ export function CaseStudyModal() {
         >
           <motion.button
             type="button"
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            className="absolute inset-0 bg-[var(--color-ink)]/50 backdrop-blur-sm"
             onClick={closeRepo}
             aria-label="Fechar"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
           />
 
           <motion.article
-            className="relative max-h-[92vh] w-full max-w-2xl overflow-y-auto border border-white/10 bg-[#0a0a0a] sm:rounded-sm"
-            initial={{ y: 60, opacity: 0 }}
+            className="relative max-h-[92vh] w-full max-w-2xl overflow-y-auto border border-[var(--color-border)] bg-[var(--color-surface)] sm:rounded-sm"
+            initial={{ y: 48, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 40, opacity: 0 }}
+            exit={{ y: 32, opacity: 0 }}
             transition={motionTheme.gentle}
-            layout
           >
             {screenshot && (
-              <div className="relative aspect-[16/10] overflow-hidden border-b border-white/5">
-                <img
-                  src={screenshot}
-                  alt=""
-                  className="h-full w-full object-cover brightness-75"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+              <div className="relative aspect-[16/10] overflow-hidden border-b border-[var(--color-border)]">
+                <img src={screenshot} alt="" className="h-full w-full object-cover" />
               </div>
             )}
 
             <div className="p-6 sm:p-8">
               <span
-                className="text-[10px] uppercase tracking-[0.4em]"
+                className="font-mono text-[10px] uppercase tracking-[0.28em]"
                 style={{ color: visual.accent }}
               >
                 {visual.tag}
               </span>
-              <h2 className="mt-2 font-display text-3xl uppercase">{selectedRepo.name}</h2>
-              <p className="mt-2 text-sm text-[#8a8580]">{selectedRepo.description}</p>
+              <h2 className="mt-2 font-display text-3xl font-bold uppercase text-[var(--color-ink)]">
+                {selectedRepo.name}
+              </h2>
+              <p className="mt-2 text-sm text-[var(--color-muted)]">{selectedRepo.description}</p>
 
               <div className="mt-8 space-y-6">
                 <div>
-                  <h3 className="text-[10px] uppercase tracking-[0.35em] text-[#ff5c35]">
-                    Desafio
+                  <h3 className="font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--color-accent)]">
+                    Problema
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#eceae6]">
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]">
                     {caseStudy.challenge}
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-[10px] uppercase tracking-[0.35em] text-[#ff5c35]">
+                  <h3 className="font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--color-accent)]">
                     Stack
                   </h3>
                   <div className="mt-2 flex flex-wrap gap-2">
                     {caseStudy.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="border border-white/10 px-2 py-1 text-xs text-[#8a8580]"
+                        className="border border-[var(--color-border)] px-2 py-1 font-mono text-xs text-[var(--color-steel)]"
                       >
                         {tech}
                       </span>
@@ -98,38 +91,38 @@ export function CaseStudyModal() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-[10px] uppercase tracking-[0.35em] text-[#ff5c35]">
-                    Resultado
+                  <h3 className="font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--color-accent)]">
+                    O que ficou
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#eceae6]">
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]">
                     {caseStudy.outcome}
                   </p>
                 </div>
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-wrap gap-3">
                 {demo && (
                   <a
                     href={demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex border border-[#22c55e] px-5 py-2.5 text-xs uppercase tracking-widest text-[#22c55e] transition hover:bg-[#22c55e] hover:text-[#050505]"
+                    className="border border-[var(--color-steel)] px-5 py-2.5 font-mono text-[11px] uppercase tracking-widest text-[var(--color-steel)] transition hover:bg-[var(--color-steel)] hover:text-white"
                   >
-                    Ver demo
+                    Demo
                   </a>
                 )}
                 <a
                   href={selectedRepo.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex border border-[#ff5c35] px-5 py-2.5 text-xs uppercase tracking-widest text-[#ff5c35] transition hover:bg-[#ff5c35] hover:text-[#050505]"
+                  className="bg-[var(--color-accent)] px-5 py-2.5 font-mono text-[11px] uppercase tracking-widest text-white transition hover:bg-[var(--color-steel)]"
                 >
-                  Ver no GitHub
+                  GitHub
                 </a>
                 <button
                   type="button"
                   onClick={closeRepo}
-                  className="px-5 py-2.5 text-xs uppercase tracking-widest text-[#8a8580] transition hover:text-[#eceae6]"
+                  className="px-5 py-2.5 font-mono text-[11px] uppercase tracking-widest text-[var(--color-muted)] transition hover:text-[var(--color-ink)]"
                 >
                   Fechar
                 </button>

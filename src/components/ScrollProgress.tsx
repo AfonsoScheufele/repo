@@ -8,8 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
 const SECTIONS = [
   { id: "hero", label: "01" },
   { id: "sobre", label: "02" },
-  { id: "track", label: "03" },
-  { id: "repos", label: "04" },
+  { id: "foco", label: "03" },
+  { id: "projetos", label: "04" },
   { id: "contato", label: "05" },
 ];
 
@@ -38,25 +38,25 @@ export function ScrollProgress() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 z-[60] h-[2px] w-full bg-white/5">
+      <div className="fixed top-0 left-0 z-[60] h-[2px] w-full bg-[var(--color-border)]">
         <div
           ref={barRef}
-          className="h-full origin-left bg-[#ff5c35]"
+          className="h-full origin-left bg-[var(--color-accent)]"
           style={{ transform: "scaleX(0)" }}
         />
       </div>
 
       <nav
-        className="fixed right-6 top-1/2 z-[40] hidden -translate-y-1/2 flex-col gap-4 lg:flex"
+        className="fixed right-5 top-1/2 z-[40] hidden -translate-y-1/2 flex-col gap-3 lg:flex"
         aria-label="Seções"
       >
         {SECTIONS.map((s) => (
           <a
             key={s.id}
             href={`#${s.id}`}
-            className="group flex items-center gap-2 text-[10px] uppercase tracking-widest text-[#6b6560] transition hover:text-[#ff5c35]"
+            className="group flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-[var(--color-muted)] transition hover:text-[var(--color-accent)]"
           >
-            <span className="h-px w-0 bg-[#ff5c35] transition-all group-hover:w-4" />
+            <span className="h-px w-0 bg-[var(--color-accent)] transition-all group-hover:w-3" />
             {s.label}
           </a>
         ))}

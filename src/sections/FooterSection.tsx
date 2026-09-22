@@ -1,89 +1,27 @@
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { motion } from "motion/react";
-import { MagneticLink } from "../components/MagneticLink";
 import { data } from "../data";
 import { personalData } from "../data/personal";
-import { motionTheme } from "../motion.theme";
-import { useReducedMotion } from "../hooks/useReducedMotion";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export function FooterSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
-  const reduced = useReducedMotion();
-
-  useGSAP(
-    () => {
-      if (reduced || !textRef.current) return;
-
-      gsap.fromTo(
-        textRef.current,
-        { xPercent: 8 },
-        {
-          xPercent: -8,
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1.5,
-          },
-        },
-      );
-    },
-    { scope: sectionRef, dependencies: [reduced] },
-  );
-
-  const socials = [
-    { label: "GitHub", href: data.profile.githubUrl },
-    { label: "LinkedIn", href: personalData.contact.linkedin },
-    { label: "E-mail", href: `mailto:${personalData.contact.email}` },
-    ...(data.profile.twitter
-      ? [{ label: "X / Twitter", href: `https://x.com/${data.profile.twitter}` }]
-      : []),
-    { label: "CV", href: personalData.cvPath },
-  ];
-
   return (
-    <footer ref={sectionRef} className="overflow-hidden border-t border-white/5">
-      <div ref={textRef} className="whitespace-nowrap py-20 select-none">
-        <span className="font-display text-[clamp(4rem,18vw,14rem)] uppercase tracking-tight text-white/5">
-          SEMPRE CONSTRUINDO — SEMPRE EVOLUINDO —&nbsp;
-        </span>
-        <span className="font-display text-[clamp(4rem,18vw,14rem)] uppercase tracking-tight text-[#ff5c35]/20">
-          SEMPRE CONSTRUINDO — SEMPRE EVOLUINDO —&nbsp;
-        </span>
-      </div>
-
-      <div className="flex flex-col items-center gap-8 border-t border-white/5 px-[5vw] py-12 sm:flex-row sm:justify-between">
-        <MagneticLink>
-          <motion.a
-            href={data.profile.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-display text-2xl uppercase tracking-wider text-[#eceae6] transition hover:text-[#ff5c35]"
-            whileHover={reduced ? {} : { scale: 1.02 }}
-            transition={motionTheme.snap}
-          >
-            @{data.profile.username}
-          </motion.a>
-        </MagneticLink>
-
-        <div className="flex flex-wrap justify-center gap-6 text-xs uppercase tracking-widest text-[#6b6560]">
-          {socials.map((s) => (
-            <a key={s.label} href={s.href} className="transition hover:text-[#ff5c35]" target={s.href.startsWith("http") ? "_blank" : undefined} rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}>
-              {s.label}
-            </a>
-          ))}
-        </div>
-
-        <p className="text-xs text-[#6b6560]">
+    <footer className="border-t border-[var(--color-border)] px-[5vw] py-10">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <p className="font-mono text-[11px] uppercase tracking-widest text-[var(--color-muted)]">
           © {new Date().getFullYear()} {data.profile.name}
         </p>
+        <div className="flex flex-wrap gap-5 font-mono text-[11px] uppercase tracking-widest text-[var(--color-steel)]">
+          <a href={data.profile.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)]">
+            GitHub
+          </a>
+          <a href={personalData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)]">
+            LinkedIn
+          </a>
+          <a href={`mailto:${personalData.contact.email}`} className="hover:text-[var(--color-accent)]">
+            E-mail
+          </a>
+          <a href={personalData.cvPath} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent)]">
+            CV
+          </a>
+        </div>
       </div>
     </footer>
   );

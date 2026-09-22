@@ -1,56 +1,56 @@
 {
-  "money-manager": {
-    "screenshot": "/screenshots/money-manager.svg",
-    "demo": "./demos/money-manager.html",
-    "caseStudy": {
-      "challenge": "Centralizar controle financeiro pessoal com categorização e visão de orçamento.",
-      "stack": ["JavaScript", "Node.js", "HTML/CSS"],
-      "outcome": "Sistema completo para contas, transações e controle de gastos mensais."
-    }
-  },
   "Computer-Vision-Inspection-System": {
-    "screenshot": "/screenshots/computer-vision.svg",
+    "screenshot": "./screenshots/computer-vision.png",
     "demo": "./demos/computer-vision.html",
     "caseStudy": {
-      "challenge": "Detectar defeitos em imagens de produção com precisão e velocidade.",
+      "challenge": "Montar um pipeline que classifica imagem e aponta defeito — projeto pessoal, não linha de fábrica.",
       "stack": ["Python", "TensorFlow", "OpenCV"],
-      "outcome": "Pipeline automatizado de inspeção visual para linha industrial."
+      "outcome": "Script de inspeção que marca o problema na imagem."
     }
   },
   "digital-twin-3d": {
-    "screenshot": "/screenshots/digital-twin.svg",
+    "screenshot": "./screenshots/digital-twin.png",
     "demo": "./demos/digital-twin.html",
     "caseStudy": {
-      "challenge": "Visualizar equipamentos industriais em 3D com dados em tempo real.",
+      "challenge": "Mostrar um equipamento em 3D no browser, com câmera e movimento.",
       "stack": ["JavaScript", "Three.js", "WebGL"],
-      "outcome": "Interface interativa de gêmeo digital com animações e controles de câmera."
+      "outcome": "Cena interativa do gêmeo digital no front."
     }
   },
   "industrial-event-logger": {
-    "screenshot": "/screenshots/event-logger.svg",
+    "screenshot": "./screenshots/event-logger.png",
     "demo": "./demos/event-logger.html",
     "caseStudy": {
-      "challenge": "Garantir rastreabilidade total de eventos industriais para auditoria.",
+      "challenge": "Registrar eventos de forma que dá pra revisitar e reordenar depois.",
       "stack": ["HTML", "Event Sourcing", "JavaScript"],
-      "outcome": "Logger com replay de eventos e histórico imutável para compliance."
+      "outcome": "Logger com histórico e replay."
     }
   },
   "iiot-plc-node-react-dashboard": {
-    "screenshot": "/screenshots/iiot-dashboard.svg",
+    "screenshot": "./screenshots/iiot-dashboard.png",
     "demo": "./demos/iiot-dashboard.html",
     "caseStudy": {
-      "challenge": "Conectar simulação de PLC a um dashboard web em tempo real.",
+      "challenge": "Ligar um PLC simulado a uma tela web — mesmo raciocínio do OBD: sensor → API → UI.",
       "stack": ["TypeScript", "Node.js", "React", "WebSocket"],
-      "outcome": "Stack IIoT completa: PLC → API → dashboard React com dados live."
+      "outcome": "PLC → API → dashboard React com dado ao vivo."
     }
   },
   "rotapay": {
-    "screenshot": "/screenshots/rotapay.svg",
+    "screenshot": "./screenshots/rotapay.png",
     "demo": null,
     "caseStudy": {
-      "challenge": "Operar frete BR com papéis, mapa e Pix só após a entrega — sem fingir TED no sandbox.",
+      "challenge": "TMS com papéis, frete e Pix só depois da entrega — sem inventar TED.",
       "stack": ["React", "TypeScript", "FastAPI", "PostgreSQL", "Redis", "RQ"],
-      "outcome": "TMS lite com máquina de estados, webhook Pix via fila (retry + falha visível), SLA por distância e testes de API no fluxo crítico."
+      "outcome": "Fluxo local com status fechados, webhook na fila e teste até pago."
+    }
+  },
+  "entrega-ja": {
+    "screenshot": "./screenshots/entrega-ja.png",
+    "demo": null,
+    "caseStudy": {
+      "challenge": "Courier BR: cotação, Pix, três papéis e tracking público.",
+      "stack": ["NestJS", "React", "Prisma", "PostgreSQL", "Redis", "Socket.io"],
+      "outcome": "Last-mile local com estados, webhook idempotente e tracking ao vivo."
     }
   }
 }

@@ -13,6 +13,31 @@ import type {
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const USERNAME = process.env.GITHUB_USERNAME ?? "AfonsoScheufele";
 
+const FEATURED_REPOS = new Set([
+  "iiot-plc-node-react-dashboard",
+  "Computer-Vision-Inspection-System",
+  "digital-twin-3d",
+  "industrial-event-logger",
+  "rotapay",
+  "entrega-ja",
+]);
+
+const FEATURED_ORDER = [
+  "rotapay",
+  "entrega-ja",
+  "iiot-plc-node-react-dashboard",
+  "Computer-Vision-Inspection-System",
+  "digital-twin-3d",
+  "industrial-event-logger",
+];
+
+const DESCRIPTION_OVERRIDES: Record<string, string> = {
+  rotapay:
+    "TMS lite BR: frete com papéis, mapa OpenStreetMap, Pix e webhook via fila RQ.",
+  "entrega-ja":
+    "Last-mile / courier BR: cotação, Pix, três portais e tracking público em tempo real.",
+};
+
 interface GitHubUser {
   login: string;
   name: string | null;
@@ -61,14 +86,10 @@ function inferCategory(name: string): RepoCategory {
     name.startsWith("iiot-") ||
     name.startsWith("industrial-") ||
     name.includes("Computer-Vision") ||
-    name.includes("Inspection");
+    name.includes("Inspection") ||
+    name === "digital-twin-3d";
   return industrial ? "industrial" : "software";
 }
-
-const DESCRIPTION_OVERRIDES: Record<string, string> = {
-  rotapay:
-    "TMS lite BR: frete com papéis, mapa OpenStreetMap, Pix e webhook via fila RQ.",
-};
 
 function buildLanguageBreakdown(repos: GitHubRepo[]): LanguageBreakdown[] {
   const totals: Record<string, number> = {};
@@ -91,7 +112,6 @@ function buildLanguageBreakdown(repos: GitHubRepo[]): LanguageBreakdown[] {
 
 function buildTimeline(
   memberSinceYear: number,
-  repos: GitHubRepo[],
   manual: Achievement[],
 ): TimelineEvent[] {
   const events: TimelineEvent[] = [
@@ -102,15 +122,6 @@ function buildTimeline(
       description: `@${USERNAME} — início da jornada open source.`,
     },
   ];
-
-  for (const repo of repos) {
-    events.push({
-      id: `repo-${repo.name}`,
-      year: new Date(repo.createdAt).getFullYear(),
-      title: repo.name,
-      description: repo.description ?? "Repositório público.",
-    });
-  }
 
   for (const item of manual.filter((a) => a.year)) {
     events.push({
@@ -146,7 +157,9 @@ async function main() {
   ]);
 
   const profileRepo = reposRaw.find((r) => r.name === USERNAME);
-  const projectRepos = reposRaw.filter((r) => r.name !== USERNAME);
+  const projectRepos = reposRaw.filter(
+    (r) => r.name !== USERNAME && FEATURED_REPOS.has(r.name),
+  );
 
   const repos: GitHubRepo[] = [];
   for (const repo of projectRepos) {
@@ -167,6 +180,12 @@ async function main() {
     });
   }
 
+  repos.sort((a, b) => {
+    const ia = FEATURED_ORDER.indexOf(a.name);
+    const ib = FEATURED_ORDER.indexOf(b.name);
+    return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+  });
+
   const memberSinceYear = new Date(user.created_at).getFullYear();
   const currentYear = new Date().getFullYear();
   const languages = [...new Set(repos.map((r) => r.language).filter(Boolean))] as string[];
@@ -175,37 +194,6 @@ async function main() {
     if (!latest || repo.lastPush > latest) return repo.lastPush;
     return latest;
   }, null);
-
-  const githubAchievements: Achievement[] = [
-    {
-      id: "gh-followers",
-      title: `${user.followers} Seguidores`,
-      description: "Comunidade dev acompanhando o trabalho no GitHub.",
-      category: "github",
-    },
-    {
-      id: "gh-repos",
-      title: `${repos.length} Projetos Públicos`,
-      description: "De IIoT e visão computacional a dashboards e ERP.",
-      category: "github",
-    },
-    {
-      id: "gh-profile",
-      title: "Profile README",
-      description: `${profileRepo?.stargazers_count ?? 0} stars no repositório de perfil.`,
-      category: "github",
-      repo: USERNAME,
-    },
-  ];
-
-  if (languages.length > 0) {
-    githubAchievements.push({
-      id: "gh-langs",
-      title: languages.join(" · "),
-      description: "Stack técnica nos repositórios públicos.",
-      category: "github",
-    });
-  }
 
   const data: AchievementsData = {
     profile: {
@@ -222,14 +210,14 @@ async function main() {
       memberSinceYear,
       yearsOnGitHub: Math.max(1, currentYear - memberSinceYear),
       languages,
-      totalStars: reposRaw.reduce((s, r) => s + r.stargazers_count, 0),
+      totalStars: repos.reduce((s, r) => s + r.stars, 0),
       followers: user.followers,
       following: user.following,
       lastPush,
     },
     repos,
-    achievements: [...githubAchievements, ...manualAchievements],
-    timeline: buildTimeline(memberSinceYear, repos, manualAchievements),
+    achievements: manualAchievements,
+    timeline: buildTimeline(memberSinceYear, manualAchievements),
     languageBreakdown: buildLanguageBreakdown(repos),
     profileReadme: {
       stars: profileRepo?.stargazers_count ?? 0,
@@ -241,7 +229,7 @@ async function main() {
   const outPath = join(__dirname, "../src/data/achievements.json");
   writeFileSync(outPath, JSON.stringify(data, null, 2));
   console.log(
-    `✓ ${data.repos.length} repos · ${data.languageBreakdown.length} langs · @${USERNAME}`,
+    `✓ ${data.repos.length} featured · ${data.languageBreakdown.length} langs · @${USERNAME}`,
   );
 }
 

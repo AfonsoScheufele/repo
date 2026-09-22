@@ -2,14 +2,16 @@
 @import "lenis/dist/lenis.css";
 
 @theme {
-  --font-display: "Bebas Neue", "Syne", system-ui, sans-serif;
-  --font-body: "DM Sans", system-ui, sans-serif;
-  --color-bg: #050505;
-  --color-surface: #0f0f0f;
-  --color-accent: #ff5c35;
-  --color-accent-soft: #c9a962;
-  --color-text: #eceae6;
-  --color-muted: #8a8580;
+  --font-display: "Archivo", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --color-bg: #eef1f4;
+  --color-surface: #ffffff;
+  --color-ink: #14181f;
+  --color-muted: #5a6572;
+  --color-accent: #e4572e;
+  --color-steel: #1b4965;
+  --color-border: #c5ccd6;
 }
 
 * {
@@ -25,97 +27,48 @@ body {
   min-height: 100vh;
   font-family: var(--font-body);
   background: var(--color-bg);
-  color: var(--color-text);
+  color: var(--color-ink);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: rgba(255, 92, 53, 0.35);
-  color: #fff;
+  background: rgba(228, 87, 46, 0.25);
+  color: #14181f;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
 }
 
 .pin-spacer {
   overflow: visible !important;
 }
 
-/* Marquee */
-.marquee-track {
-  display: flex;
-  width: max-content;
-  will-change: transform;
-}
-
-/* Horizontal scroll panel */
-.horizontal-panel {
-  display: flex;
-  flex-wrap: nowrap;
-  width: max-content;
-  gap: 2rem;
-  padding: 0 5vw;
-}
-
-.repo-card-h {
-  flex-shrink: 0;
-  width: clamp(340px, 44vw, 560px);
-}
-
-.repo-thumb img {
-  will-change: transform;
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(27, 73, 101, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27, 73, 101, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
 .repo-thumb-grid {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 24px 24px;
+    linear-gradient(rgba(20, 24, 31, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 24, 31, 0.06) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
-/* Preloader */
-.preloader-panel {
-  will-change: transform;
+.reveal {
+  will-change: transform, opacity;
 }
 
 body.is-loading {
   overflow: hidden;
-}
-
-/* Split text */
-.split-line {
-  overflow: hidden;
-  line-height: 0.85;
-}
-
-.split-word {
-  display: inline-block;
-  will-change: transform;
-}
-
-/* Manifesto words */
-.manifesto-word {
-  display: inline-block;
-  will-change: transform, opacity;
-}
-
-.hero-grid {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 64px 64px;
-}
-
-@media (max-width: 767px) {
-  .horizontal-panel-mobile {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 2rem;
-  }
-
-  .horizontal-panel-mobile .repo-card-h {
-    scroll-snap-align: start;
-  }
 }
 
 html.lenis,
@@ -127,21 +80,10 @@ html.lenis body {
   scroll-behavior: auto !important;
 }
 
-.hero-name-line {
-  overflow: hidden;
-  line-height: 0.82;
-}
-
-.hero-char {
-  display: inline-block;
-  will-change: transform, opacity;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track,
-  .hero-char,
-  .split-word,
-  .manifesto-word {
+  .reveal {
     will-change: auto;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

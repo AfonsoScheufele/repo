@@ -1,47 +1,32 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Preloader } from "./components/Preloader";
 import { ScrollProgress } from "./components/ScrollProgress";
 import { CaseStudyModal } from "./components/CaseStudyModal";
 import { ModalProvider } from "./context/ModalContext";
 import { HeroSection } from "./sections/HeroSection";
-import { MarqueeSection } from "./sections/MarqueeSection";
 import { AboutSection } from "./sections/AboutSection";
-import { ManifestoSection } from "./sections/ManifestoSection";
-import { TrackSection } from "./sections/TrackSection";
-import { JourneyTimeline } from "./sections/JourneyTimeline";
 import { DomainStackSection } from "./sections/DomainStackSection";
-import { ProfileHighlight } from "./sections/ProfileHighlight";
-import { StatsPinned } from "./sections/StatsPinned";
-import { LanguageChart } from "./sections/LanguageChart";
-import { ReposHorizontal } from "./sections/ReposHorizontal";
-import { AchievementsGrid } from "./sections/AchievementsGrid";
+import { FeaturedWork } from "./sections/FeaturedWork";
 import { ContactSection } from "./sections/ContactSection";
 import { FooterSection } from "./sections/FooterSection";
-import { MagneticLink } from "./components/MagneticLink";
-import GradualBlur from "./components/GradualBlur";
 import { useLenis } from "./hooks/useLenis";
 import { data } from "./data";
 import { personalData } from "./data/personal";
-import { motion, AnimatePresence } from "motion/react";
-
-const CustomCursor = lazy(() =>
-  import("./components/CustomCursor").then((m) => ({ default: m.CustomCursor })),
-);
+import { AnimatePresence, motion } from "motion/react";
 
 function Nav({ visible }: { visible: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const links = [
     { href: "#sobre", label: "Sobre" },
-    { href: "#track", label: "Tracks" },
-    { href: "#repos", label: "Repos" },
+    { href: "#projetos", label: "Projetos" },
     { href: "#contato", label: "Contato" },
     { href: personalData.cvPath, label: "CV", external: true },
     { href: data.profile.githubUrl, label: "GitHub", external: true },
@@ -49,29 +34,29 @@ function Nav({ visible }: { visible: boolean }) {
 
   return (
     <nav
-      className={`fixed top-0 z-50 w-full transition-all duration-700 ${
+      className={`fixed top-0 z-50 w-full transition-all duration-400 ${
         visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
-      } ${scrolled ? "border-b border-white/5 bg-[#050505]/90 backdrop-blur-md" : "bg-transparent"}`}
+      } ${scrolled ? "border-b border-[var(--color-border)] bg-[var(--color-bg)]/95 backdrop-blur-md" : "bg-transparent"}`}
     >
-      <div className="flex items-center justify-between px-[5vw] py-5">
-        <MagneticLink>
-          <a href="#hero" className="font-display text-xl uppercase tracking-widest text-[#eceae6]">
-            AS
-          </a>
-        </MagneticLink>
+      <div className="flex items-center justify-between px-[5vw] py-4">
+        <a
+          href="#hero"
+          className="font-display text-lg font-extrabold uppercase tracking-widest text-[var(--color-ink)]"
+        >
+          AS
+        </a>
 
-        <div className="hidden gap-8 text-[10px] uppercase tracking-[0.35em] text-[#6b6560] md:flex">
+        <div className="hidden gap-7 font-mono text-[10px] uppercase tracking-[0.28em] text-[var(--color-muted)] md:flex">
           {links.map((l) => (
-            <MagneticLink key={l.label}>
-              <a
-                href={l.href}
-                target={l.external ? "_blank" : undefined}
-                rel={l.external ? "noopener noreferrer" : undefined}
-                className="transition hover:text-[#ff5c35]"
-              >
-                {l.label}
-              </a>
-            </MagneticLink>
+            <a
+              key={l.label}
+              href={l.href}
+              target={l.external ? "_blank" : undefined}
+              rel={l.external ? "noopener noreferrer" : undefined}
+              className="transition hover:text-[var(--color-accent)]"
+            >
+              {l.label}
+            </a>
           ))}
         </div>
 
@@ -81,9 +66,9 @@ function Nav({ visible }: { visible: boolean }) {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
         >
-          <span className={`block h-px w-6 bg-[#eceae6] transition ${menuOpen ? "translate-y-[7px] rotate-45" : ""}`} />
-          <span className={`block h-px w-6 bg-[#eceae6] transition ${menuOpen ? "opacity-0" : ""}`} />
-          <span className={`block h-px w-6 bg-[#eceae6] transition ${menuOpen ? "-translate-y-[7px] -rotate-45" : ""}`} />
+          <span className={`block h-px w-6 bg-[var(--color-ink)] transition ${menuOpen ? "translate-y-[7px] rotate-45" : ""}`} />
+          <span className={`block h-px w-6 bg-[var(--color-ink)] transition ${menuOpen ? "opacity-0" : ""}`} />
+          <span className={`block h-px w-6 bg-[var(--color-ink)] transition ${menuOpen ? "-translate-y-[7px] -rotate-45" : ""}`} />
         </button>
       </div>
 
@@ -93,16 +78,16 @@ function Nav({ visible }: { visible: boolean }) {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden border-t border-white/5 bg-[#050505] md:hidden"
+            className="overflow-hidden border-t border-[var(--color-border)] bg-[var(--color-bg)] md:hidden"
           >
-            <div className="flex flex-col gap-4 px-[5vw] py-6">
+            <div className="flex flex-col gap-4 px-[5vw] py-5">
               {links.map((l) => (
                 <a
                   key={l.label}
                   href={l.href}
                   target={l.external ? "_blank" : undefined}
                   rel={l.external ? "noopener noreferrer" : undefined}
-                  className="text-sm uppercase tracking-widest text-[#8a8580]"
+                  className="font-mono text-xs uppercase tracking-widest text-[var(--color-muted)]"
                   onClick={() => setMenuOpen(false)}
                 >
                   {l.label}
@@ -124,38 +109,16 @@ export default function App() {
     <ModalProvider>
       <Preloader onComplete={() => setReady(true)} />
       <ScrollProgress />
-      <Suspense fallback={null}>
-        <CustomCursor />
-      </Suspense>
       <Nav visible={ready} />
       <main>
         <HeroSection ready={ready} />
-        <MarqueeSection />
         <AboutSection />
-        <ManifestoSection />
-        <TrackSection />
-        <JourneyTimeline />
         <DomainStackSection />
-        <ProfileHighlight />
-        <StatsPinned />
-        <LanguageChart />
-        <ReposHorizontal />
-        <AchievementsGrid />
+        <FeaturedWork />
         <ContactSection />
       </main>
       <FooterSection />
       <CaseStudyModal />
-      <GradualBlur
-        target="page"
-        position="bottom"
-        height="6rem"
-        strength={2}
-        divCount={5}
-        curve="bezier"
-        exponential
-        opacity={1}
-        zIndex={-70}
-      />
     </ModalProvider>
   );
 }

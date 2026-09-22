@@ -3,13 +3,6 @@ import { getDemo, getScreenshot } from "../data/media";
 import { useModal } from "../context/ModalContext";
 import type { GitHubRepo } from "../lib/types";
 
-const LANG_COLORS: Record<string, string> = {
-  TypeScript: "#3178c6",
-  JavaScript: "#f7df1e",
-  Python: "#3776ab",
-  HTML: "#e34c26",
-};
-
 function RepoThumbnail({ repo, index }: { repo: GitHubRepo; index: number }) {
   const visual = getRepoVisual(repo.name);
   const screenshot = getScreenshot(repo.name);
@@ -18,57 +11,46 @@ function RepoThumbnail({ repo, index }: { repo: GitHubRepo; index: number }) {
 
   return (
     <div
-      className="repo-thumb relative mb-6 aspect-[16/10] overflow-hidden rounded-sm border border-white/6"
+      className="repo-thumb relative mb-5 aspect-[16/10] overflow-hidden border border-[var(--color-border)]"
       style={{ background: visual.gradient }}
     >
-      {screenshot && (
-        <>
-          <img
-            src={screenshot}
-            alt=""
-            className="absolute inset-0 h-full w-full object-cover opacity-90 brightness-[0.55] saturate-[0.85]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-[#050505]/40" />
-        </>
+      {screenshot ? (
+        <img
+          src={screenshot}
+          alt={`Preview de ${repo.name}`}
+          className="absolute inset-0 h-full w-full object-cover object-top"
+          loading="lazy"
+        />
+      ) : (
+        <div className="repo-thumb-grid pointer-events-none absolute inset-0" aria-hidden />
       )}
+
+      <div className="pointer-events-none absolute inset-x-0 top-0 flex flex-wrap gap-2 p-3">
+        <span
+          className="w-fit border border-[var(--color-border)] bg-white/95 px-2 py-1 font-mono text-[10px] uppercase tracking-widest shadow-sm"
+          style={{ color: visual.accent }}
+        >
+          {visual.tag}
+        </span>
+        {demo && (
+          <span className="w-fit border border-[var(--color-steel)]/30 bg-white/95 px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-[var(--color-steel)] shadow-sm">
+            Demo
+          </span>
+        )}
+      </div>
 
       {!screenshot && (
-        <>
-          <div className="repo-thumb-grid pointer-events-none absolute inset-0 opacity-[0.07]" aria-hidden />
-          <span
-            className="pointer-events-none absolute -right-2 top-1/2 -translate-y-1/2 select-none font-display text-[clamp(5rem,14vw,8rem)] uppercase leading-none text-white/[0.04]"
-            aria-hidden
-          >
-            {visual.glyph}
-          </span>
-        </>
-      )}
-
-      <div className="absolute inset-0 flex flex-col justify-between p-5">
-        <div className="flex flex-wrap gap-2">
-          <span
-            className="w-fit rounded-sm border border-white/10 bg-black/50 px-2.5 py-1 text-[10px] uppercase tracking-widest backdrop-blur-sm"
-            style={{ color: visual.accent }}
-          >
-            {visual.tag}
-          </span>
-          {demo && (
-            <span className="w-fit rounded-sm border border-[#22c55e]/40 bg-black/50 px-2.5 py-1 text-[10px] uppercase tracking-widest text-[#22c55e] backdrop-blur-sm">
-              Live demo
-            </span>
-          )}
-        </div>
-        <div>
-          <p className="text-[10px] uppercase tracking-[0.3em] text-white/40">
+        <div className="absolute inset-0 flex flex-col justify-end p-4">
+          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-ink)]/50">
             {repo.language ?? "Repo"}
           </p>
-          <p className="mt-1 font-display text-2xl uppercase tracking-wide text-white/90">
+          <p className="mt-1 font-display text-xl font-bold uppercase tracking-wide text-[var(--color-ink)]">
             {shortName}
           </p>
         </div>
-      </div>
+      )}
 
-      <span className="absolute bottom-4 right-4 font-display text-4xl text-white/10">
+      <span className="pointer-events-none absolute bottom-2 right-3 font-display text-2xl font-bold text-[var(--color-ink)]/10">
         {String(index + 1).padStart(2, "0")}
       </span>
     </div>
@@ -77,70 +59,60 @@ function RepoThumbnail({ repo, index }: { repo: GitHubRepo; index: number }) {
 
 export function RepoCard({ repo, index }: { repo: GitHubRepo; index: number }) {
   const { openRepo } = useModal();
-  const visual = getRepoVisual(repo.name);
   const demo = getDemo(repo.name);
 
   return (
-    <article className="repo-card-h group relative flex min-h-[520px] flex-col overflow-hidden rounded-sm border border-white/8 bg-[#0a0a0a] transition-colors hover:border-white/15">
+    <article className="group flex h-full min-h-[440px] w-full flex-col border border-[var(--color-border)] bg-[var(--color-surface)] transition hover:border-[var(--color-accent)]">
       <button
         type="button"
         onClick={() => openRepo(repo)}
         className="flex flex-1 flex-col text-left"
       >
-        <div className="p-5 pb-0">
+        <div className="p-4 pb-0">
           <RepoThumbnail repo={repo} index={index} />
         </div>
-        <div className="flex flex-1 flex-col justify-between p-5 pt-3">
+        <div className="flex flex-1 flex-col justify-between p-4 pt-2">
           <div>
-            <h3 className="font-display text-2xl uppercase tracking-wide text-[#eceae6] transition-colors group-hover:text-[#ff5c35]">
+            <h3 className="font-display text-xl font-bold uppercase tracking-wide text-[var(--color-ink)] transition group-hover:text-[var(--color-accent)]">
               {repo.name}
             </h3>
-            <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-[#6b6560]">
+            <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-[var(--color-muted)]">
               {repo.description ?? "Sem descrição"}
             </p>
           </div>
-          <div className="mt-5 flex items-center justify-between border-t border-white/5 pt-4 text-[10px] uppercase tracking-widest text-[#6b6560]">
-            {repo.language && (
-              <span className="flex items-center gap-2">
-                <span
-                  className="h-1.5 w-1.5 rounded-full"
-                  style={{ background: LANG_COLORS[repo.language] ?? visual.accent }}
-                />
-                {repo.language}
-              </span>
-            )}
-            <span>★ {repo.stars}</span>
-            <span className="text-[#ff5c35] opacity-0 transition-opacity group-hover:opacity-100">
-              Case study →
+          <div className="mt-4 flex items-center justify-between border-t border-[var(--color-border)] pt-3 font-mono text-[10px] uppercase tracking-widest text-[var(--color-muted)]">
+            <span>{repo.language ?? "—"}</span>
+            <span className="text-[var(--color-accent)] opacity-0 transition group-hover:opacity-100">
+              Case →
             </span>
           </div>
         </div>
       </button>
-      <div className="grid grid-cols-2 border-t border-white/5">
+      <div className="grid grid-cols-2 border-t border-[var(--color-border)]">
         {demo ? (
           <a
             href={demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-3 text-center text-[10px] uppercase tracking-widest text-[#22c55e] transition hover:bg-white/5"
+            className="px-4 py-3 text-center font-mono text-[10px] uppercase tracking-widest text-[var(--color-steel)] transition hover:bg-[var(--color-bg)]"
             onClick={(e) => e.stopPropagation()}
           >
-            Ver demo
+            Demo
           </a>
         ) : (
           <button
             type="button"
             onClick={() => openRepo(repo)}
-            className="px-5 py-3 text-center text-[10px] uppercase tracking-widest text-[#6b6560] transition hover:bg-white/5 hover:text-[#eceae6]"
+            className="px-4 py-3 text-center font-mono text-[10px] uppercase tracking-widest text-[var(--color-muted)] transition hover:bg-[var(--color-bg)] hover:text-[var(--color-ink)]"
           >
-            Case study
+            Case
           </button>
         )}
         <a
           href={repo.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="border-l border-white/5 px-5 py-3 text-center text-[10px] uppercase tracking-widest text-[#6b6560] transition hover:bg-white/5 hover:text-[#eceae6]"
+          className="border-l border-[var(--color-border)] px-4 py-3 text-center font-mono text-[10px] uppercase tracking-widest text-[var(--color-muted)] transition hover:bg-[var(--color-bg)] hover:text-[var(--color-ink)]"
           onClick={(e) => e.stopPropagation()}
         >
           GitHub

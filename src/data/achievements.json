@@ -9,40 +9,21 @@
     "memberSince": "2024-11-20T00:26:30Z"
   },
   "stats": {
-    "publicRepos": 9,
+    "publicRepos": 6,
     "memberSinceYear": 2024,
     "yearsOnGitHub": 2,
     "languages": [
-      "TypeScript",
       "Python",
+      "TypeScript",
       "JavaScript",
       "HTML"
     ],
-    "totalStars": 11,
+    "totalStars": 0,
     "followers": 46,
     "following": 38,
     "lastPush": "2026-09-22T17:42:58Z"
   },
   "repos": [
-    {
-      "name": "entrega-ja",
-      "description": null,
-      "language": "TypeScript",
-      "stars": 0,
-      "forks": 0,
-      "url": "https://github.com/AfonsoScheufele/entrega-ja",
-      "topics": [],
-      "createdAt": "2026-09-22T11:53:46Z",
-      "updatedAt": "2026-09-22T17:10:42Z",
-      "lastPush": "2026-09-22T17:10:32Z",
-      "languages": {
-        "TypeScript": 131712,
-        "CSS": 6414,
-        "JavaScript": 899,
-        "HTML": 648
-      },
-      "category": "software"
-    },
     {
       "name": "rotapay",
       "description": "TMS lite BR: frete com papéis, mapa OpenStreetMap, Pix e webhook via fila RQ.",
@@ -52,7 +33,7 @@
       "url": "https://github.com/AfonsoScheufele/rotapay",
       "topics": [],
       "createdAt": "2026-09-22T11:52:14Z",
-      "updatedAt": "2026-09-22T17:43:03Z",
+      "updatedAt": "2026-09-22T18:10:14Z",
       "lastPush": "2026-09-22T17:42:58Z",
       "languages": {
         "Python": 89677,
@@ -65,60 +46,37 @@
       "category": "software"
     },
     {
-      "name": "salao-beleza",
-      "description": null,
-      "language": "JavaScript",
-      "stars": 0,
-      "forks": 0,
-      "url": "https://github.com/AfonsoScheufele/salao-beleza",
-      "topics": [],
-      "createdAt": "2026-08-26T19:16:34Z",
-      "updatedAt": "2026-09-02T13:32:45Z",
-      "lastPush": "2026-09-02T13:26:43Z",
-      "languages": {
-        "JavaScript": 53090,
-        "TypeScript": 34140,
-        "CSS": 26673,
-        "HTML": 896
-      },
-      "category": "software"
-    },
-    {
-      "name": "repo",
-      "description": null,
+      "name": "entrega-ja",
+      "description": "Last-mile / courier BR: cotação, Pix, três portais e tracking público em tempo real.",
       "language": "TypeScript",
       "stars": 0,
       "forks": 0,
-      "url": "https://github.com/AfonsoScheufele/repo",
+      "url": "https://github.com/AfonsoScheufele/entrega-ja",
       "topics": [],
-      "createdAt": "2026-08-19T19:33:02Z",
-      "updatedAt": "2026-08-20T18:56:24Z",
-      "lastPush": "2026-08-20T18:51:05Z",
+      "createdAt": "2026-09-22T11:53:46Z",
+      "updatedAt": "2026-09-22T18:10:15Z",
+      "lastPush": "2026-09-22T17:10:32Z",
       "languages": {
-        "TypeScript": 129132,
-        "HTML": 26792,
-        "CSS": 4176
+        "TypeScript": 131712,
+        "CSS": 6414,
+        "JavaScript": 899,
+        "HTML": 648
       },
       "category": "software"
     },
     {
-      "name": "money-manager",
-      "description": "Personal finance management system for tracking accounts, transactions, and budget control",
-      "language": "JavaScript",
+      "name": "iiot-plc-node-react-dashboard",
+      "description": "IIoT project: PLC simulation → Node.js API → React dashboard",
+      "language": "TypeScript",
       "stars": 0,
       "forks": 0,
-      "url": "https://github.com/AfonsoScheufele/money-manager",
+      "url": "https://github.com/AfonsoScheufele/iiot-plc-node-react-dashboard",
       "topics": [],
-      "createdAt": "2026-01-21T17:49:20Z",
-      "updatedAt": "2026-01-26T17:16:32Z",
-      "lastPush": "2026-01-26T17:15:52Z",
-      "languages": {
-        "JavaScript": 191110,
-        "Go": 76970,
-        "CSS": 11087,
-        "HTML": 1321
-      },
-      "category": "software"
+      "createdAt": "2026-01-13T01:26:03Z",
+      "updatedAt": "2026-01-15T20:15:48Z",
+      "lastPush": "2026-01-15T20:15:41Z",
+      "languages": {},
+      "category": "industrial"
     },
     {
       "name": "Computer-Vision-Inspection-System",
@@ -153,7 +111,7 @@
         "CSS": 9488,
         "HTML": 4092
       },
-      "category": "software"
+      "category": "industrial"
     },
     {
       "name": "industrial-event-logger",
@@ -173,101 +131,56 @@
         "Dockerfile": 477
       },
       "category": "industrial"
-    },
-    {
-      "name": "iiot-plc-node-react-dashboard",
-      "description": "IIoT project: PLC simulation → Node.js API → React dashboard",
-      "language": "TypeScript",
-      "stars": 0,
-      "forks": 0,
-      "url": "https://github.com/AfonsoScheufele/iiot-plc-node-react-dashboard",
-      "topics": [],
-      "createdAt": "2026-01-13T01:26:03Z",
-      "updatedAt": "2026-01-15T20:15:48Z",
-      "lastPush": "2026-01-15T20:15:41Z",
-      "languages": {
-        "TypeScript": 131230,
-        "JavaScript": 3035,
-        "CSS": 1032,
-        "HTML": 367,
-        "Dockerfile": 166
-      },
-      "category": "industrial"
     }
   ],
   "achievements": [
     {
-      "id": "gh-followers",
-      "title": "46 Seguidores",
-      "description": "Comunidade dev acompanhando o trabalho no GitHub.",
-      "category": "github"
-    },
-    {
-      "id": "gh-repos",
-      "title": "9 Projetos Públicos",
-      "description": "De IIoT e visão computacional a dashboards e ERP.",
-      "category": "github"
-    },
-    {
-      "id": "gh-profile",
-      "title": "Profile README",
-      "description": "11 stars no repositório de perfil.",
-      "category": "github",
-      "repo": "AfonsoScheufele"
-    },
-    {
-      "id": "gh-langs",
-      "title": "TypeScript · Python · JavaScript · HTML",
-      "description": "Stack técnica nos repositórios públicos.",
-      "category": "github"
-    },
-    {
       "id": "iiot-stack",
-      "title": "Stack IIoT Completa",
-      "description": "PLC simulado → API Node.js → Dashboard React em tempo real.",
+      "title": "PLC → API → React",
+      "description": "Dashboard ao vivo em cima de PLC simulado.",
       "category": "industrial",
       "year": 2025,
       "repo": "iiot-plc-node-react-dashboard"
     },
     {
       "id": "cv-inspection",
-      "title": "Visão Computacional Industrial",
-      "description": "Inspeção automatizada com TensorFlow e OpenCV para detecção de defeitos.",
+      "title": "Inspeção por visão",
+      "description": "TensorFlow + OpenCV pra achar defeito na imagem.",
       "category": "industrial",
       "year": 2026,
       "repo": "Computer-Vision-Inspection-System"
     },
     {
       "id": "digital-twin",
-      "title": "Digital Twin 3D",
-      "description": "Interface interativa 3D com Three.js e WebGL para gêmeos digitais.",
-      "category": "software",
+      "title": "Twin 3D",
+      "description": "Equipamento em Three.js no browser.",
+      "category": "industrial",
       "year": 2025,
       "repo": "digital-twin-3d"
     },
     {
       "id": "event-sourcing",
-      "title": "Event Sourcing Industrial",
-      "description": "Logger de eventos industriais com auditoria completa e rastreabilidade.",
+      "title": "Log de eventos",
+      "description": "Histórico auditável com replay.",
       "category": "industrial",
       "year": 2025,
       "repo": "industrial-event-logger"
     },
     {
-      "id": "finance-erp",
-      "title": "ERP Financeiro Pessoal",
-      "description": "Gestão de contas, transações e controle de orçamento em JavaScript.",
-      "category": "software",
-      "year": 2026,
-      "repo": "money-manager"
-    },
-    {
       "id": "rotapay-tms",
-      "title": "RotaPay — TMS + Pix",
-      "description": "Frete com papéis, mapa e cobrança Pix via webhook em fila RQ (idempotente, retry, falha visível).",
+      "title": "RotaPay",
+      "description": "TMS com Pix e webhook em fila.",
       "category": "software",
       "year": 2026,
       "repo": "rotapay"
+    },
+    {
+      "id": "entrega-ja",
+      "title": "EntregaJá",
+      "description": "Last-mile com tracking e Pix.",
+      "category": "software",
+      "year": 2026,
+      "repo": "entrega-ja"
     }
   ],
   "timeline": [
@@ -280,133 +193,74 @@
     {
       "id": "iiot-stack",
       "year": 2025,
-      "title": "Stack IIoT Completa",
-      "description": "PLC simulado → API Node.js → Dashboard React em tempo real."
+      "title": "PLC → API → React",
+      "description": "Dashboard ao vivo em cima de PLC simulado."
     },
     {
       "id": "digital-twin",
       "year": 2025,
-      "title": "Digital Twin 3D",
-      "description": "Interface interativa 3D com Three.js e WebGL para gêmeos digitais."
+      "title": "Twin 3D",
+      "description": "Equipamento em Three.js no browser."
     },
     {
       "id": "event-sourcing",
       "year": 2025,
-      "title": "Event Sourcing Industrial",
-      "description": "Logger de eventos industriais com auditoria completa e rastreabilidade."
-    },
-    {
-      "id": "repo-entrega-ja",
-      "year": 2026,
-      "title": "entrega-ja",
-      "description": "Repositório público."
-    },
-    {
-      "id": "repo-rotapay",
-      "year": 2026,
-      "title": "rotapay",
-      "description": "TMS lite BR: frete com papéis, mapa OpenStreetMap, Pix e webhook via fila RQ."
-    },
-    {
-      "id": "repo-salao-beleza",
-      "year": 2026,
-      "title": "salao-beleza",
-      "description": "Repositório público."
-    },
-    {
-      "id": "repo-repo",
-      "year": 2026,
-      "title": "repo",
-      "description": "Repositório público."
-    },
-    {
-      "id": "repo-money-manager",
-      "year": 2026,
-      "title": "money-manager",
-      "description": "Personal finance management system for tracking accounts, transactions, and budget control"
-    },
-    {
-      "id": "repo-Computer-Vision-Inspection-System",
-      "year": 2026,
-      "title": "Computer-Vision-Inspection-System",
-      "description": "Automated inspection system using TensorFlow and OpenCV for defect detection in images."
-    },
-    {
-      "id": "repo-digital-twin-3d",
-      "year": 2026,
-      "title": "digital-twin-3d",
-      "description": "Interactive 3D Digital Twin interface using Three.js and WebGL. Features real-time animations, 3D physics simulation, advanced rendering, and camera controls."
-    },
-    {
-      "id": "repo-industrial-event-logger",
-      "year": 2026,
-      "title": "industrial-event-logger",
-      "description": "Industrial Event Logger using Event Sourcing for auditability and replay"
-    },
-    {
-      "id": "repo-iiot-plc-node-react-dashboard",
-      "year": 2026,
-      "title": "iiot-plc-node-react-dashboard",
-      "description": "IIoT project: PLC simulation → Node.js API → React dashboard"
+      "title": "Log de eventos",
+      "description": "Histórico auditável com replay."
     },
     {
       "id": "cv-inspection",
       "year": 2026,
-      "title": "Visão Computacional Industrial",
-      "description": "Inspeção automatizada com TensorFlow e OpenCV para detecção de defeitos."
-    },
-    {
-      "id": "finance-erp",
-      "year": 2026,
-      "title": "ERP Financeiro Pessoal",
-      "description": "Gestão de contas, transações e controle de orçamento em JavaScript."
+      "title": "Inspeção por visão",
+      "description": "TensorFlow + OpenCV pra achar defeito na imagem."
     },
     {
       "id": "rotapay-tms",
       "year": 2026,
-      "title": "RotaPay — TMS + Pix",
-      "description": "Frete com papéis, mapa e cobrança Pix via webhook em fila RQ (idempotente, retry, falha visível)."
+      "title": "RotaPay",
+      "description": "TMS com Pix e webhook em fila."
+    },
+    {
+      "id": "entrega-ja",
+      "year": 2026,
+      "title": "EntregaJá",
+      "description": "Last-mile com tracking e Pix."
     }
   ],
   "languageBreakdown": [
     {
       "name": "TypeScript",
-      "bytes": 468799,
-      "percent": 44
-    },
-    {
-      "name": "JavaScript",
-      "bytes": 296345,
-      "percent": 28
+      "bytes": 174297,
+      "percent": 45
     },
     {
       "name": "Python",
       "bytes": 111300,
-      "percent": 10
+      "percent": 29
     },
     {
-      "name": "Go",
-      "bytes": 76970,
-      "percent": 7
+      "name": "JavaScript",
+      "bytes": 49110,
+      "percent": 13
     },
     {
       "name": "CSS",
-      "bytes": 69895,
-      "percent": 6
+      "bytes": 26927,
+      "percent": 7
     },
     {
       "name": "HTML",
-      "bytes": 46825,
-      "percent": 4
+      "bytes": 17449,
+      "percent": 5
     },
     {
       "name": "Shell",
       "bytes": 3675,
-      "percent": 0
+      "percent": 1
     },
     {
       "name": "Dockerfile",
-      "bytes": 872,
+      "bytes": 706,
       "percent": 0
     },
     {
@@ -419,5 +273,5 @@
     "stars": 11,
     "url": "https://github.com/AfonsoScheufele/AfonsoScheufele"
   },
-  "fetchedAt": "2026-09-22T17:54:42.100Z"
+  "fetchedAt": "2026-09-22T18:21:27.661Z"
 }

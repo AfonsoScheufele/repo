@@ -6,48 +6,48 @@ export interface RepoVisual {
 }
 
 const DEFAULT: RepoVisual = {
-  gradient: "linear-gradient(165deg, #050505 0%, #141414 55%, #3d1a0f 100%)",
-  accent: "#ff5c35",
-  tag: "Open Source",
-  glyph: "OS",
+  gradient: "linear-gradient(165deg, #EEF1F4 0%, #DCE3EA 55%, #C5CCD6 100%)",
+  accent: "#E4572E",
+  tag: "Projeto",
+  glyph: "AS",
 };
 
 export const REPO_VISUALS: Record<string, RepoVisual> = {
-  "money-manager": {
-    gradient: "linear-gradient(165deg, #050505 0%, #1a1408 45%, #92400e 100%)",
-    accent: "#d97706",
-    tag: "Finance",
-    glyph: "MM",
-  },
   "Computer-Vision-Inspection-System": {
-    gradient: "linear-gradient(165deg, #050505 0%, #0a1628 50%, #1e3a5f 100%)",
-    accent: "#38bdf8",
-    tag: "Computer Vision",
+    gradient: "linear-gradient(165deg, #E8F1F8 0%, #B8D4E8 50%, #1B4965 120%)",
+    accent: "#1B4965",
+    tag: "Visão",
     glyph: "CV",
   },
   "digital-twin-3d": {
-    gradient: "linear-gradient(165deg, #050505 0%, #120f2e 48%, #4338ca 100%)",
-    accent: "#818cf8",
-    tag: "Digital Twin",
+    gradient: "linear-gradient(165deg, #EEF0F8 0%, #C5CBE8 50%, #3D4A8A 120%)",
+    accent: "#1B4965",
+    tag: "Twin 3D",
     glyph: "3D",
   },
   "industrial-event-logger": {
-    gradient: "linear-gradient(165deg, #050505 0%, #141210 50%, #44403c 100%)",
-    accent: "#c9a962",
-    tag: "Event Sourcing",
+    gradient: "linear-gradient(165deg, #F2F0EB 0%, #D9D2C5 50%, #8A8070 120%)",
+    accent: "#5A6572",
+    tag: "Eventos",
     glyph: "EL",
   },
   "iiot-plc-node-react-dashboard": {
-    gradient: "linear-gradient(165deg, #050505 0%, #042f2e 45%, #115e59 100%)",
-    accent: "#2dd4bf",
+    gradient: "linear-gradient(165deg, #E8F4F1 0%, #A8D5C8 50%, #1B4965 120%)",
+    accent: "#1B4965",
     tag: "IIoT",
-    glyph: "IIoT",
+    glyph: "PLC",
   },
   rotapay: {
-    gradient: "linear-gradient(165deg, #050505 0%, #0f172a 48%, #0f766e 100%)",
-    accent: "#2dd4bf",
+    gradient: "linear-gradient(165deg, #F8EFEA 0%, #F0C4B0 45%, #E4572E 130%)",
+    accent: "#E4572E",
     tag: "TMS · Pix",
     glyph: "RP",
+  },
+  "entrega-ja": {
+    gradient: "linear-gradient(165deg, #F8F0E8 0%, #E8B890 45%, #C2410C 130%)",
+    accent: "#E4572E",
+    tag: "Last-mile",
+    glyph: "EJ",
   },
 };
 

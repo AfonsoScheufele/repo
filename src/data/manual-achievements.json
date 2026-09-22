@@ -1,50 +1,50 @@
 [
   {
     "id": "iiot-stack",
-    "title": "Stack IIoT Completa",
-    "description": "PLC simulado → API Node.js → Dashboard React em tempo real.",
+    "title": "PLC → API → React",
+    "description": "Dashboard ao vivo em cima de PLC simulado.",
     "category": "industrial",
     "year": 2025,
     "repo": "iiot-plc-node-react-dashboard"
   },
   {
     "id": "cv-inspection",
-    "title": "Visão Computacional Industrial",
-    "description": "Inspeção automatizada com TensorFlow e OpenCV para detecção de defeitos.",
+    "title": "Inspeção por visão",
+    "description": "TensorFlow + OpenCV pra achar defeito na imagem.",
     "category": "industrial",
     "year": 2026,
     "repo": "Computer-Vision-Inspection-System"
   },
   {
     "id": "digital-twin",
-    "title": "Digital Twin 3D",
-    "description": "Interface interativa 3D com Three.js e WebGL para gêmeos digitais.",
-    "category": "software",
+    "title": "Twin 3D",
+    "description": "Equipamento em Three.js no browser.",
+    "category": "industrial",
     "year": 2025,
     "repo": "digital-twin-3d"
   },
   {
     "id": "event-sourcing",
-    "title": "Event Sourcing Industrial",
-    "description": "Logger de eventos industriais com auditoria completa e rastreabilidade.",
+    "title": "Log de eventos",
+    "description": "Histórico auditável com replay.",
     "category": "industrial",
     "year": 2025,
     "repo": "industrial-event-logger"
   },
   {
-    "id": "finance-erp",
-    "title": "ERP Financeiro Pessoal",
-    "description": "Gestão de contas, transações e controle de orçamento em JavaScript.",
-    "category": "software",
-    "year": 2026,
-    "repo": "money-manager"
-  },
-  {
     "id": "rotapay-tms",
-    "title": "RotaPay — TMS + Pix",
-    "description": "Frete com papéis, mapa e cobrança Pix via webhook em fila RQ (idempotente, retry, falha visível).",
+    "title": "RotaPay",
+    "description": "TMS com Pix e webhook em fila.",
     "category": "software",
     "year": 2026,
     "repo": "rotapay"
+  },
+  {
+    "id": "entrega-ja",
+    "title": "EntregaJá",
+    "description": "Last-mile com tracking e Pix.",
+    "category": "software",
+    "year": 2026,
+    "repo": "entrega-ja"
   }
 ]

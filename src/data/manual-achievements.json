@@ -46,5 +46,13 @@
     "category": "software",
     "year": 2026,
     "repo": "entrega-ja"
+  },
+  {
+    "id": "oficinaflow",
+    "title": "OficinaFlow",
+    "description": "SaaS multi-tenant: agenda, OS e billing Pix.",
+    "category": "software",
+    "year": 2026,
+    "repo": "oficinaflow"
   }
 ]

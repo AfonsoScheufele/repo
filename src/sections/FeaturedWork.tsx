@@ -39,7 +39,7 @@ export function FeaturedWork() {
         Selecionados
       </h2>
       <p className="mt-4 max-w-lg text-sm text-[var(--color-muted)]">
-        Seis repos. Clique no card pra ver o case. Link do GitHub embaixo.
+        Sete projetos. Clique no card pra ver o case.
       </p>
 
       <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">

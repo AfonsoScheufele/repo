@@ -2,7 +2,7 @@
   "headline": "Full stack. Base em automação industrial.",
   "bio": [
     "Sou Afonso Scheufele, de Concórdia (SC). Trabalho com aplicações web — Node.js, React e TypeScript — com formação em Tecnologia em Automação Industrial (IFC).",
-    "No dia a dia monto APIs REST (Express, NestJS + TypeORM), dashboards em React/Tailwind e uso PostgreSQL e Redis. Python entra quando o processo pede. Em projetos pessoais sigo mexendo com IIoT, visão e logística (RotaPay, EntregaJá).",
+    "No dia a dia monto APIs REST (Express, NestJS + TypeORM), dashboards em React/Tailwind e uso PostgreSQL e Redis. Python entra quando o processo pede. Em projetos pessoais sigo mexendo com IIoT, visão, logística (RotaPay, EntregaJá) e SaaS multi-tenant (OficinaFlow).",
     "No trabalho atual ajudo a manter um dashboard e relatórios em tempo quase real (~5.300 usuários ativos, 13.300+ cadastrados), com refresh a cada 2–5 min e jobs no backend a cada 10–60 s, em cima de um volume grande de dados operacionais (presença, acesso, rotas)."
   ],
   "mission": "",

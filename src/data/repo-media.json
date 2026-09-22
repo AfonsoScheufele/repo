@@ -52,5 +52,14 @@
       "stack": ["NestJS", "React", "Prisma", "PostgreSQL", "Redis", "Socket.io"],
       "outcome": "Last-mile local com estados, webhook idempotente e tracking ao vivo."
     }
+  },
+  "oficinaflow": {
+    "screenshot": "./screenshots/oficinaflow.png",
+    "demo": null,
+    "caseStudy": {
+      "challenge": "SaaS B2B multi-tenant pra oficina: agenda + OS + assinatura Pix — sem parecer frete de novo.",
+      "stack": ["React", "TypeScript", "FastAPI", "PostgreSQL", "Redis", "RQ"],
+      "outcome": "Isolamento de tenant testado, webhook accept≠apply com falha parcial visível e gating 402."
+    }
   }
 }

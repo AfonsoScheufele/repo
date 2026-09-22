@@ -49,7 +49,7 @@ export interface CaseStudy {
 }
 
 export interface RepoMedia {
-  screenshot: string;
+  screenshot: string | null;
   demo?: string | null;
   caseStudy: CaseStudy;
 }

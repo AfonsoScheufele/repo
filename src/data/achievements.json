@@ -9,7 +9,7 @@
     "memberSince": "2024-11-20T00:26:30Z"
   },
   "stats": {
-    "publicRepos": 6,
+    "publicRepos": 7,
     "memberSinceYear": 2024,
     "yearsOnGitHub": 2,
     "languages": [
@@ -24,6 +24,25 @@
     "lastPush": "2026-09-22T17:42:58Z"
   },
   "repos": [
+    {
+      "name": "oficinaflow",
+      "description": "SaaS multi-tenant: agenda, OS e billing Pix com webhook em fila.",
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "url": "https://github.com/AfonsoScheufele/oficinaflow",
+      "topics": [],
+      "createdAt": "2026-09-22T19:00:00Z",
+      "updatedAt": "2026-09-22T20:30:00Z",
+      "lastPush": "2026-09-22T20:30:00Z",
+      "languages": {
+        "Python": 70000,
+        "TypeScript": 35000,
+        "CSS": 9000,
+        "HTML": 800
+      },
+      "category": "software"
+    },
     {
       "name": "rotapay",
       "description": "TMS lite BR: frete com papéis, mapa OpenStreetMap, Pix e webhook via fila RQ.",
@@ -181,6 +200,14 @@
       "category": "software",
       "year": 2026,
       "repo": "entrega-ja"
+    },
+    {
+      "id": "oficinaflow",
+      "title": "OficinaFlow",
+      "description": "SaaS multi-tenant: agenda, OS e billing Pix.",
+      "category": "software",
+      "year": 2026,
+      "repo": "oficinaflow"
     }
   ],
   "timeline": [
@@ -225,6 +252,12 @@
       "year": 2026,
       "title": "EntregaJá",
       "description": "Last-mile com tracking e Pix."
+    },
+    {
+      "id": "oficinaflow",
+      "year": 2026,
+      "title": "OficinaFlow",
+      "description": "SaaS multi-tenant: agenda, OS e billing Pix."
     }
   ],
   "languageBreakdown": [

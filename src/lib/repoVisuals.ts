@@ -49,6 +49,12 @@ export const REPO_VISUALS: Record<string, RepoVisual> = {
     tag: "Last-mile",
     glyph: "EJ",
   },
+  oficinaflow: {
+    gradient: "linear-gradient(165deg, #EEF2F6 0%, #C5D0DC 45%, #3D5A73 130%)",
+    accent: "#1B4965",
+    tag: "SaaS · OS",
+    glyph: "OF",
+  },
 };
 
 export function getRepoVisual(name: string): RepoVisual {
